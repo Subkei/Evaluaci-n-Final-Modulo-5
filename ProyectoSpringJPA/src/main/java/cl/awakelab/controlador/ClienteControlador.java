@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,7 +38,7 @@ public class ClienteControlador {
         return "cliform";
     } 
     //guardar formulario cliente
-    @RequestMapping("/clisave")    
+    @PostMapping("/clisave")    
     public String addClienteSave(@ModelAttribute("cliente") Cliente cliente, BindingResult result, Model m){    
         
     	if(result.hasErrors()) {
@@ -79,14 +80,14 @@ public class ClienteControlador {
     public String updateClienteSave(@ModelAttribute("cliente") Cliente cliente, BindingResult result, Model m){
        
     	if(result.hasErrors()) {
-    	   return "cliform";
+    	   return "clieditform";
        }
        else {
     	   servicioCli.updateCliente(cliente, cliente.getId());
     	m.addAttribute("mensaje", "Cliente actualizado con exito");
-        //log.info("Procesando edición de clientes");
+       }
+    	//log.info("Procesando edición de clientes");
         return "redirect:/viewcli";
-    }
     }
     //eliminar cliente
     @GetMapping(value="/deletecli/{id}")    

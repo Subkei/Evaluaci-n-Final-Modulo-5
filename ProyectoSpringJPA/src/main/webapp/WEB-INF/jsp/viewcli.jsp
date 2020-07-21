@@ -56,7 +56,7 @@
 </table>
 <br/>
 	<a href="cliform">Agregar nuevo Cliente</a>&nbsp;&nbsp;
-	<a href="/">Volver al inicio</a>
+	<a href="index.jsp">Volver al inicio</a>
 
 </body>
 </html>
