@@ -49,6 +49,7 @@
 		<td>
 			<a href="deletecli/${cli.getId()}">Eliminar</a>&nbsp;
 			<a href="editcli/${cli.getId()}">Editar</a>&nbsp;
+			<a href="cliente/${cli.getId()}">Detalle</a>&nbsp;
 		</td>
 		</tr>
 	</c:forEach>

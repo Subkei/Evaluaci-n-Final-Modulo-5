@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import cl.awakelab.dao.Pagos;
 import cl.awakelab.servicio.IPagosServicio;
@@ -55,8 +54,8 @@ public class PagosControlador {
     }
     
     //busqueda por ID de pagos
-    @GetMapping(value="/pagos")
-    public String Pagos(Model m, @RequestParam("idpago") int idpago) {
+    @GetMapping(value="/pagos/{idpago}")
+    public String Pagos(Model m, @PathVariable int idpago) {
     	Pagos pag = servicioPag.getPagosById(idpago);
     	m.addAttribute("pagosData",pag);
     	return "buscarPagos";

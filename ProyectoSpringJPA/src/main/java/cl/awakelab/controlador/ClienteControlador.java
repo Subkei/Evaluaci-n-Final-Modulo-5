@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import cl.awakelab.dao.Cliente;
 import cl.awakelab.servicio.IClienteServicio;
@@ -59,12 +58,12 @@ public class ClienteControlador {
         //log.info("Listado de clientes");
         return "viewcli";
     }
-    //busqueda por ID de cliente
-    @GetMapping(value="/cliente")
-    public String Cliente(Model m, @RequestParam("id") int id) {
+    //busqueda por ID de cliente (detalle)
+    @GetMapping(value="/cliente/{id}")
+    public String Cliente(Model m, @PathVariable int id) {
     	Cliente cli = servicioCli.getClienteById(id);
     	m.addAttribute("clienteData",cli);
-    	return "buscarCliente";
+    	return "clidetalle";
     }
     //formulario actualizar cliente
     @RequestMapping(value="/editcli/{id}")    
