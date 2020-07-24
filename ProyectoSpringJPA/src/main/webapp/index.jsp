@@ -1,4 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="es">
 	<head>		
@@ -6,14 +7,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Inicio</title>
 		
-    	<link rel="stylesheet" href="/css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="/css/estilos.css"/>
+		
+		<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+		<spring:url value="/resources/css/estilos.css" var="estilosCSS" />
+	
+		<link href="${bootstrapCSS}" rel="stylesheet" />
+		<link href="${estilosCSS}" rel="stylesheet" />
 
 	</head>
 <body>
 <div class="container-md text-center" >
   <h1 class="display-4">Pagina Inicio </h1>
   <p class="lead">¿Qué acción deseas realizar?</p>
+  <a href="logout">Cierre de Sesión</a>
   <hr class="my-4">
 </div>
 

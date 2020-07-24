@@ -2,6 +2,11 @@ package cl.awakelab.dao;
 
 import javax.persistence.*;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
+
 @Entity
 @Table(name = "Cliente")
 public class Cliente {
@@ -12,15 +17,15 @@ public class Cliente {
 	
 	@Column(name = "id")
 	private int id;
-
+	@NotEmpty
 	private String nombre;
-	
+	@NumberFormat//(style = Style.NUMBER, pattern = "#-####-####")
 	private int telefono;
-
+	@Email
 	private String correoelectronico;
 
 	private String rubro;
-
+	@NotEmpty
 	private String direccion;
 	
 	public Cliente() {

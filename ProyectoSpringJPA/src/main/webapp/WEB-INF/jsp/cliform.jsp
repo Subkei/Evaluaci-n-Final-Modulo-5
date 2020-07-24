@@ -9,11 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS JS-->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <script src="/js/jquery-3.5.1.min.js"></script>
+    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+    <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
+    
+    <link href="${bootstrapCSS}" rel="stylesheet" />
+    <script src="${jqueryJS}"></script>
    
     <title>Agregar Cliente</title>
   </head>
+     <style>
+      .error {
+         color: #ff0000;
+      }
+
+      .errorblock {
+         color: #000;
+         background-color: #ffEEEE;
+         border: 3px solid #ff0000;
+         padding: 8px;
+         margin: 16px;
+      }
+   </style>
+   
   <body>
     <div class="jumbotron">
         <header class="text-center">
@@ -21,17 +38,19 @@
         </header>
     </div> 
      <form:form method="post" action="clisave" modelAttribute="cliente">
+     <form:errors path = "*" cssClass = "errorblock" element = "div" /> 
       <div class="container">
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Nombre:</label>
+              <form:label path="nombre" class="col-4 lead font-weight-normal">Nombre:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path = "nombre" cssClass = "error" />
               </div>
               <form:input class="col-6 input-group" path="nombre"/>
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Telefono:</label>
+              <form:label path="telefono" class="col-4 lead font-weight-normal">Telefono:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
@@ -39,7 +58,7 @@
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Correo electrónico:</label>
+              <form:label path="correoelectronico" class="col-4 lead font-weight-normal">Correo electrónico:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
@@ -47,7 +66,7 @@
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Rubro:</label>
+              <form:label path="rubro" class="col-4 lead font-weight-normal">Rubro:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
@@ -55,7 +74,7 @@
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Dirección:</label>
+              <form:label path="direccion" class="col-4 lead font-weight-normal">Dirección:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
@@ -75,8 +94,12 @@
   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/js/jquery-3.5.1.min.js"/></script>
-	<script src="/js/popper.min.js"/></script>
-    <script src="/js/bootstrap.min.js"/></script>
+    <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
+    <spring:url value="/resources/js/popper.min.js" var="popperJS"/>
+    <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJS" />
+    
+    <script src="${jqueryJS}"></script>
+    <script src="${popperJS}"></script>
+    <script src="${bootstrapJS}"></script>
   </body>
 </html>
