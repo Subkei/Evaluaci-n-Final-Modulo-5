@@ -42,14 +42,14 @@
 	<!--JSTL para cada campo en la variable items-->
 	<c:forEach items="${listapagos}" var="pag">
 		<tr>
-			<td>${pag.idpago}</td>
-			<td>${pag.mesanio}</td>
-			<td>$${pag.montoregular}</td>
-			<td>$${pag.montoadicionales}</td>
-			<td>${pag.cliente_id}</td>
+			<td>${pag.getIdpago()}</td>
+			<td>${pag.getMesanio()}</td>
+			<td>$${pag.getMontoregular()}</td>
+			<td>$${pag.getMontoadicionales()}</td>
+			<td>${pag.getCliente_id()}</td>
 			<td>
-				<a href="deletepag/${pag.idpago}">Eliminar</a>&nbsp;
-				<a href="editpag/${pag.idpago}">Editar</a>
+				<a href="deletepag/${pag.getIdpago()}">Eliminar</a>&nbsp;
+				<a href="editpag/${pag.getIdpago()}">Editar</a>
 			</td>
 		</tr>
 	</c:forEach>

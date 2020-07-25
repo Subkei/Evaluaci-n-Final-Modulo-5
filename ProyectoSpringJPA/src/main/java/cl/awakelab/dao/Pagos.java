@@ -1,6 +1,10 @@
 package cl.awakelab.dao;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.NumberFormat;
 
 @Entity
 public class Pagos {
@@ -10,9 +14,13 @@ public class Pagos {
     @SequenceGenerator(sequenceName = "pagos_seq", allocationSize = 1, name = "PAG_SEQ")
 	
 	private int idpago;
+	@NotEmpty
 	private String mesanio;
+	@NumberFormat
 	private int montoregular;
+	@NumberFormat
 	private int montoadicionales;
+	@NotNull
 	private int cliente_id;
 
 

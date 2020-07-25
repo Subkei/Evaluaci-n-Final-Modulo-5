@@ -2,10 +2,12 @@ package cl.awakelab.controlador;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,27 +23,32 @@ public class PagosControlador {
 	@Autowired
 	IPagosServicio servicioPag;
 	
-	//static Logger log = Logger.getLogger(CapacitacionControlador.class.getName());
+	static Logger log = Logger.getLogger(PagosControlador.class.getName());
 	
 	//vista formulario pagos
     @RequestMapping("/pagform")    
     public String addPagos(Model m){    
         m.addAttribute("pagos", new Pagos());
-        //log.info("Ingreso a formulario de creación de pagos");
+        log.info("Ingreso a formulario de creación de pagos");
         return "pagform";
     } 
     //guardar formulario pagos
     @PostMapping("/pagosave")    
-    public String save(@ModelAttribute("pagos") Pagos spagos, BindingResult result, Model m){    
+    public String addPagosSave(@ModelAttribute("pagos") @Validated Pagos pagos, BindingResult result, Model m){    
     	if(result.hasErrors()) {
     		return "pagform";
     	}
     	else {    	
-	    	servicioPag.addPagos(spagos);
-	    	m.addAttribute("mensaje", "Pago creado con exito");
+	    	servicioPag.addPagos(pagos);
+	    	String mensaje = "El pago " + pagos.getIdpago() + " ha sido ingresado con exito";
+	    	m.addAttribute("mensaje", mensaje);
+	    	m.addAttribute("mesanio", pagos.getMesanio());
+	    	m.addAttribute("montoregular", pagos.getMontoregular());
+	    	m.addAttribute("montoadicionales", pagos.getMontoadicionales());
+	    	m.addAttribute("cliente_id", pagos.getCliente_id());
     	}
-        //log.info("Pago creado: " + pag.toString());
-        return "redirect:/viewpag";
+        log.info("Pago creado: " + pagos.toString());
+        return "pagsaved";
     }
 	
 	//mostrar listado pagos
@@ -49,7 +56,7 @@ public class PagosControlador {
     public String getPagosList(Model m){    
         List<Pagos> listpag= servicioPag.getAllPagos();
         m.addAttribute("listapagos",listpag);
-        //log.info("Listado de pagos");
+        log.info("Listado de pagos");
         return "viewpag";
     }
     
@@ -66,29 +73,34 @@ public class PagosControlador {
         Pagos pag = new Pagos();
         pag = servicioPag.getPagosById(idpago);
         m.addAttribute("pagos",pag);
-        //log.info("Ingreso a edición de pagos");
+        log.info("Ingreso a edición de pagos");
         return "pageditform";
     }
     //guardar formulario actualizar pagos 
     @RequestMapping("/pageditsave")    
-    public String updatePagosSave(@ModelAttribute("pagos") Pagos pagos, BindingResult result, Model m){
+    public String updatePagosSave(@ModelAttribute("pagos") @Validated Pagos pagos, BindingResult result, Model m){
     	
     	if(result.hasErrors()) {
     		return "pageditform";
     	}
     	else {    	
 	    	servicioPag.updatePagos(pagos, pagos.getIdpago());
-	    	m.addAttribute("mensaje", "Pago creado con exito");
+	    	String mensaje = "El pago ID " + pagos.getIdpago() + " ha sido actualizado con exito";
+	    	m.addAttribute("mensaje", mensaje);
+	    	m.addAttribute("mesanio", pagos.getMesanio());
+	    	m.addAttribute("montoregular", pagos.getMontoregular());
+	    	m.addAttribute("montoadicionales", pagos.getMontoadicionales());
+	    	m.addAttribute("cliente_id", pagos.getCliente_id());
     	}
-        //log.info("Procesando edición de Pagos");
-        return "redirect:/viewpag";
+        log.info("Procesando edición de Pagos");
+        return "pagsaved";
     }
     //eliminar pagos
     @GetMapping(value="/deletepag/{idpago}")    
     public String deletePagos(Model m, @PathVariable int idpago){    
         servicioPag.deletePagos(idpago);
         m.addAttribute("mensaje", "Pago eliminado con exito");        
-        //log.debug("DEBUG - Pago eliminado");
+        log.debug("DEBUG - Pago eliminado");
         return "redirect:/viewpag";
     }
 }
