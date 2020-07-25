@@ -53,8 +53,11 @@
 </div>
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->   
-    <script src="/js/jquery-3.5.1.min.js"/></script>
-	<script src="/js/bootstrap.bundle.min.js"/></script>
-    <script src="/js/bootstrap.min.js"/></script>
+	<spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
+	<spring:url value="/resources/js/bootstrap.bundle.min.js" var="bootstrapbJS" />
+	<spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJS" />
+    <script src="${jqueryJS}"></script>
+    <script src="${bootstrapbJS}"></script>
+    <script src="${bootstrapJS}"></script>
 </body>
 </html>

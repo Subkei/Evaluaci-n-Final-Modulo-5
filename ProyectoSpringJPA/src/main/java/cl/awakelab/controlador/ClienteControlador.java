@@ -3,8 +3,8 @@ package cl.awakelab.controlador;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;    
-import org.springframework.stereotype.Controller;  
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -47,7 +47,8 @@ public class ClienteControlador {
     	}
     	else {
     		servicioCli.addCliente(cliente);
-    		m.addAttribute("mensaje", "Cliente creado con exito");
+    		String mensaje = "El cliente "+ cliente.getNombre() + " ha sido creado con exito" ;
+    		m.addAttribute("mensaje", mensaje);
     		m.addAttribute("nombre", cliente.getNombre());
     		m.addAttribute("telefono", cliente.getTelefono());
     		m.addAttribute("correoelectronico", cliente.getCorreoelectronico());
@@ -58,7 +59,7 @@ public class ClienteControlador {
         return "clisaved";
     }
     //mostrar listado clientes
-    @GetMapping(value="/viewcli", headers = "Accept=applicatin/json")    
+    @RequestMapping("/viewcli")    
     public String getClienteList(Model m){    
         List<Cliente> listcli= servicioCli.getAllClientes();
         m.addAttribute("listaclientes",listcli);
@@ -83,17 +84,23 @@ public class ClienteControlador {
     }
     //guardar formulario actualizar cliente
     @RequestMapping("/clieditsave")    
-    public String updateClienteSave(@ModelAttribute("cliente") Cliente cliente, BindingResult result, Model m){
+    public String updateClienteSave(@ModelAttribute("cliente") @Validated Cliente cliente, BindingResult result, Model m){
        
     	if(result.hasErrors()) {
     	   return "clieditform";
        }
        else {
-    	   servicioCli.updateCliente(cliente, cliente.getId());
-    	m.addAttribute("mensaje", "Cliente actualizado con exito");
+	    	servicioCli.updateCliente(cliente, cliente.getId());
+	   		String mensaje = "El cliente "+ cliente.getNombre() + " ha sido actualizado con exito" ;
+	   		m.addAttribute("mensaje", mensaje);
+	   		m.addAttribute("nombre", cliente.getNombre());
+	   		m.addAttribute("telefono", cliente.getTelefono());
+	   		m.addAttribute("correoelectronico", cliente.getCorreoelectronico());
+	   		m.addAttribute("rubro", cliente.getRubro());
+	   		m.addAttribute("direccion", cliente.getDireccion());    	   
        }
     	log.info("Procesando edición de clientes");
-        return "redirect:/viewcli";
+        return "clisaved";
     }
     //eliminar cliente
     @GetMapping(value="/deletecli/{id}")    

@@ -10,27 +10,15 @@
 
     <!-- Bootstrap CSS JS-->
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+    <spring:url value="/resources/css/estilos.css" var="estilosCSS" />
     <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
     
     <link href="${bootstrapCSS}" rel="stylesheet" />
+    <link href="${estilosCSS}" rel="stylesheet" />
     <script src="${jqueryJS}"></script>
    
     <title>Agregar Cliente</title>
-  </head>
-     <style>
-      .error {
-         color: #ff0000;
-      }
-
-      .errorblock {
-         color: #000;
-         background-color: #ffEEEE;
-         border: 3px solid #ff0000;
-         padding: 8px;
-         margin: 16px;
-      }
-   </style>
-   
+  </head>   
   <body>
     <div class="jumbotron">
         <header class="text-center">
@@ -46,23 +34,25 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "nombre" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="nombre"/>
+              <form:input class="col-6 input-group" path="nombre" placeholder="Ingresa el nombre completo"/>
           </div>
           <br><br>
           <div class="row">
-              <form:label path="telefono" class="col-4 lead font-weight-normal">Telefono:</form:label>
+              <form:label path="telefono" class="col-4 lead font-weight-normal" >Telefono:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path = "telefono" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="telefono"/>
+              <form:input class="col-6 input-group" path="telefono" min="9" maxlength="9" placeholder="Ingresa un número de 9 digitos"/>
           </div>
           <br><br>
           <div class="row">
               <form:label path="correoelectronico" class="col-4 lead font-weight-normal">Correo electrónico:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path = "correoelectronico" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="correoelectronico"/>
+              <form:input class="col-6 input-group" path="correoelectronico" placeholder="ejemplo tucorreo@correo.com"/>
           </div>
           <br><br>
           <div class="row">
@@ -70,15 +60,16 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input class="col-6 input-group" path="rubro"/>
+              <form:input class="col-6 input-group" path="rubro" placeholder="Constructor, Abogado, Vendedor"/>
           </div>
           <br><br>
           <div class="row">
               <form:label path="direccion" class="col-4 lead font-weight-normal">Dirección:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path = "direccion" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="direccion"/>
+              <form:input class="col-6 input-group" path="direccion" placeholder="Dirección #, Ciudad"/>
           </div>
           <br><br><br>
            <div class="row">

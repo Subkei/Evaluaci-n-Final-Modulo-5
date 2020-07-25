@@ -15,7 +15,7 @@ Telefono: ${clienteData.getTelefono()}<br/>
 Correo electronico: ${clienteData.getCorreoelectronico()}<br/>
 Rubro: ${clienteData.getRubro()}<br/>
 Dirección: ${clienteData.getDireccion()}<br/>
-
+<br>
 <a class="btn btn-warning col-4" href="/ProyectoSpringJPA/viewcli" role="button">Volver</a>  
 </body>
 </html>

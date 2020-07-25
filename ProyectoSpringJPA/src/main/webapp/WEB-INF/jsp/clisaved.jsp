@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cliente guardado con exito ${mensaje}</title>
+<title>Cliente ok</title>
 </head>
 <body>
 
-<h2>Cliente guardado con exito</h2>
+<h2>${mensaje}</h2>
       <table>
          <tr>
             <td>Nombre</td>
@@ -32,6 +32,7 @@
             <td>${direccion}</td>
          </tr>                  
       </table>
+      <br>
       <a class="btn btn-warning col-4" href="viewcli" role="button">Volver</a>  
       
 </body>

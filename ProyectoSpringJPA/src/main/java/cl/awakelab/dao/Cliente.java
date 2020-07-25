@@ -5,7 +5,6 @@ import javax.persistence.*;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.NumberFormat;
-import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
 @Table(name = "Cliente")
@@ -19,7 +18,7 @@ public class Cliente {
 	private int id;
 	@NotEmpty
 	private String nombre;
-	@NumberFormat//(style = Style.NUMBER, pattern = "#-####-####")
+	@NumberFormat
 	private int telefono;
 	@Email
 	private String correoelectronico;
