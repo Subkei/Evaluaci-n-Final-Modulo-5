@@ -9,6 +9,6 @@ public interface IPagosServicio {
 	List<Pagos> getAllPagos();
 	Pagos getPagosById(int idpago);
 	void addPagos(Pagos spagos);
-	void updatePagos(Pagos upagos, int idpago);
+	void updatePagos(Pagos upagos);
 	void deletePagos(int idpago);
 }

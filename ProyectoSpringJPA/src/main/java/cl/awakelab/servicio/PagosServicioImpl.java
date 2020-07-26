@@ -30,7 +30,7 @@ public class PagosServicioImpl implements IPagosServicio{
 	}
 
 	@Override
-	public void updatePagos(Pagos upagos, int idpago) {
+	public void updatePagos(Pagos upagos) {
 		daoPag.save(upagos);
 	}
 

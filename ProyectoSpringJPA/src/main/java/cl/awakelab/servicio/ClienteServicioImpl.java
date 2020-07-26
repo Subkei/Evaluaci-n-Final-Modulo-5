@@ -30,7 +30,7 @@ public class ClienteServicioImpl implements IClienteServicio {
 	}
 
 	@Override
-	public void updateCliente(Cliente ucliente, int id) {
+	public void updateCliente(Cliente ucliente) {
 		daoCli.save(ucliente);
 	}
 

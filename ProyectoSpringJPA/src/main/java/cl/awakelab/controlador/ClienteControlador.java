@@ -8,11 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import cl.awakelab.dao.Cliente;
 import cl.awakelab.servicio.IClienteServicio;
@@ -25,12 +21,7 @@ public class ClienteControlador {
 	
 	static Logger log = Logger.getLogger(ClienteControlador.class.getName());
 	
-	@RequestMapping("/")
-	public String index() {
-		//m.addAttribute("mensaje", "Bienvenido usuario");
-		return "index";
-		
-	}
+
 	//vista formulario cliente
     @RequestMapping("/cliform")    
     public String addCliente(Model m){    
@@ -90,7 +81,7 @@ public class ClienteControlador {
     	   return "clieditform";
        }
        else {
-	    	servicioCli.updateCliente(cliente, cliente.getId());
+	    	servicioCli.updateCliente(cliente);
 	   		String mensaje = "El cliente "+ cliente.getNombre() + " ha sido actualizado con exito" ;
 	   		m.addAttribute("mensaje", mensaje);
 	   		m.addAttribute("nombre", cliente.getNombre());
@@ -104,7 +95,7 @@ public class ClienteControlador {
     }
     //eliminar cliente
     @GetMapping(value="/deletecli/{id}")    
-    public String deleteCliente(Model m, @PathVariable int id){    
+    public String deleteCliente(Model m, @PathVariable("id") int id){    
         servicioCli.deleteCliente(id);
         m.addAttribute("mensaje", "Cliente eliminado con exito");
         log.debug("DEBUG - Cliente eliminado");

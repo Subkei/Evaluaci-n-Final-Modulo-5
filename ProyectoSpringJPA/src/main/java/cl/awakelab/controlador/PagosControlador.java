@@ -84,7 +84,7 @@ public class PagosControlador {
     		return "pageditform";
     	}
     	else {    	
-	    	servicioPag.updatePagos(pagos, pagos.getIdpago());
+	    	servicioPag.updatePagos(pagos);
 	    	String mensaje = "El pago ID " + pagos.getIdpago() + " ha sido actualizado con exito";
 	    	m.addAttribute("mensaje", mensaje);
 	    	m.addAttribute("mesanio", pagos.getMesanio());
@@ -97,7 +97,7 @@ public class PagosControlador {
     }
     //eliminar pagos
     @GetMapping(value="/deletepag/{idpago}")    
-    public String deletePagos(Model m, @PathVariable int idpago){    
+    public String deletePagos(Model m, @PathVariable ("idpago") int idpago){    
         servicioPag.deletePagos(idpago);
         m.addAttribute("mensaje", "Pago eliminado con exito");        
         log.debug("DEBUG - Pago eliminado");

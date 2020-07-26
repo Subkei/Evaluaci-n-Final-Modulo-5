@@ -40,8 +40,8 @@
 	<h2>Profesional</h2>
 
 	<div class="list-group text-center">
-	<a href="viewcli" class="list-group-item list-group-item-action list-group-item-light">Administrar Clientes</a>
-	<a href="viewemp" class="list-group-item list-group-item-action list-group-item-dark">Administrar Empleados</a>
+	<a href="viewcli" class="list-group-item list-group-item-action list-group-item-light">Gestionar Clientes</a>
+	<a href="viewemp" class="list-group-item list-group-item-action list-group-item-dark">Gestionar Empleados</a>
 	<a href="viewcap" class="list-group-item list-group-item-action list-group-item-light">Gestionar Capacitaciones</a>
 	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-dark">Gestionar Accidentes</a>
 	<a href="viewase" class="list-group-item list-group-item-action list-group-item-light">Gestionar Asesorias</a>
