@@ -7,32 +7,37 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/security 
 http://www.springframework.org/schema/security/spring-security.xsd">
 
-<!-- 	<http auto-config="true"> -->
-<!-- 		<intercept-url pattern="/" access="permitAll" /> -->
-<!-- 		<intercept-url pattern="/**" access="hasRole('ADMIN')" /> -->
+    <!-- enable use-expressions -->
+	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/viewcli*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/viewpag*" access="hasRole('ROLE_USER')" />		
 		
-<!-- 		<intercept-url pattern="/c_aseform" access="hasRole('CLIENTE')" /> -->
-<!-- 		<intercept-url pattern="/r_accform" access="hasRole('CLIENTE')" /> -->
+		<!-- access denied page -->
+		<access-denied-handler error-page="/403" />
 		
-<!-- 		<intercept-url pattern="/view**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/cli**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/emp**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/mej**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/pag**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/cheq**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/acc**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/ase**" access="hasRole('EMPLEADO')" /> -->
+		<form-login login-processing-url="/j_spring_security_check"
+		    login-page="/login" 
+		    default-target-url="/welcome" 
+			authentication-failure-url="/login?error" 
+			username-parameter="username"
+			password-parameter="password" />
+		<logout logout-success-url="/login?logout"  />
 		
-<!-- 	</http> -->
-	
-<!-- 	<authentication-manager> -->
-<!-- 		<authentication-provider> -->
-<!-- 		<user-service> -->
-<!-- 			<user name="admin" password="{noop}1234" authorities="ROLE_ADMIN" /> -->
-<!-- 			<user name="cliente1" password="{noop}1234" authorities="ROLE_CLIENTE" /> -->
-<!-- 			<user name="empleado1" password="{noop}1234" authorities="ROLE_EMPLEADO" /> -->
-<!-- 		</user-service> -->
-<!-- 		</authentication-provider> -->
-<!-- 	</authentication-manager> -->
-	
+		<!-- enable csrf protection -->
+		<csrf disabled="true"/>
+	</http>
+	<!-- Select users and user_roles from database -->
+	<authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="bcrypt" />
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query=
+					"select username, password, 1 as enabled from usuarios where username=?"
+				authorities-by-username-query=
+					"select username, role_user as authority from roles_usuarios where username =?  " />
+		</authentication-provider>
+	</authentication-manager>
+
 </bean:beans>
