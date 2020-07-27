@@ -2,7 +2,7 @@ package cl.awakelab.servicio;
 
 import java.util.List;
 
-import cl.awakelab.dao.Cliente;
+import cl.awakelab.modelo.Cliente;
 
 public interface IClienteServicio {
 

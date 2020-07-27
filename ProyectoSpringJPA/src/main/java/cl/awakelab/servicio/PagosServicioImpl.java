@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cl.awakelab.dao.IPagosDAO;
-import cl.awakelab.dao.Pagos;
+import cl.awakelab.modelo.IPagosRepositorio;
+import cl.awakelab.modelo.Pagos;
 
 @Service
 public class PagosServicioImpl implements IPagosServicio{
 
 	@Autowired
-	IPagosDAO daoPag;
+	IPagosRepositorio daoPag;
 	
 	@Override
 	public List<Pagos> getAllPagos() {

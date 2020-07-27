@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import cl.awakelab.dao.Pagos;
+import cl.awakelab.modelo.Pagos;
 import cl.awakelab.servicio.IPagosServicio;
 
 @Controller

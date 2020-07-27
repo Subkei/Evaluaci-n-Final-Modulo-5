@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
-import cl.awakelab.dao.Cliente;
+import cl.awakelab.modelo.Cliente;
 import cl.awakelab.servicio.IClienteServicio;
 
 @RestController

@@ -1,4 +1,4 @@
-package cl.awakelab.dao;
+package cl.awakelab.modelo;
 
 import javax.persistence.*;
 

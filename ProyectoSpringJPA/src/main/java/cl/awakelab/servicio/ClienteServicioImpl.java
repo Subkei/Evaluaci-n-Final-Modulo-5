@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cl.awakelab.dao.IClienteDAO;
-import cl.awakelab.dao.Cliente;
+import cl.awakelab.modelo.Cliente;
+import cl.awakelab.modelo.IClienteRepositorio;
 
 @Service
 public class ClienteServicioImpl implements IClienteServicio {
 
 	@Autowired
-	IClienteDAO daoCli;
+	IClienteRepositorio daoCli;
 	
 	@Override
 	public List<Cliente> getAllClientes() {

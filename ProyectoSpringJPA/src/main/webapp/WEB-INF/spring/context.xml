@@ -48,7 +48,7 @@
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
             </props>
         </property>
-        <property name="packagesToScan" value="cl.awakelab.dao" />
+        <property name="packagesToScan" value="cl.awakelab.modelo" />
     </bean>
 
     <!-- Configure the transaction manager bean -->
@@ -58,7 +58,7 @@
 
     <tx:annotation-driven />
 
-    <jpa:repositories base-package="cl.awakelab.dao" />
+    <jpa:repositories base-package="cl.awakelab.modelo" />
     <context:component-scan base-package="cl.awakelab.servicio" />
     
 </beans>

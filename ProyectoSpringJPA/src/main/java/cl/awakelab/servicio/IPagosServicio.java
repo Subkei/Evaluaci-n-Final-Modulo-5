@@ -2,7 +2,7 @@ package cl.awakelab.servicio;
 
 import java.util.List;
 
-import cl.awakelab.dao.Pagos;
+import cl.awakelab.modelo.Pagos;
 
 public interface IPagosServicio {
 
