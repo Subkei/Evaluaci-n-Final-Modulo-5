@@ -1,50 +1,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@page session="true"%>
 <html>
 <head>
-<title>Login Page</title>
-<style>
-.error {
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: #a94442;
-	background-color: #f2dede;
-	border-color: #ebccd1;
-}
-
-.msg {
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: #31708f;
-	background-color: #d9edf7;
-	border-color: #bce8f1;
-}
-
-#login-box {
-	width: 300px;
-	padding: 20px;
-	margin: 100px auto;
-	background: #fff;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border: 1px solid #000;
-}
-</style>
+<title>Página de Login</title>
+	<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+	<spring:url value="/resources/css/estilos.css" var="estilosCSS" />
+	
+	<link href="${bootstrapCSS}" rel="stylesheet" />
+	<link href="${estilosCSS}" rel="stylesheet" />
+	
 </head>
 <body onload='document.loginForm.username.focus();'>
-
-	<h1>Spring Security Login Form (Database Authentication)</h1>
-
+	<div class="container-md text-center">
+	<h1 class="display-4">Bienvenido, para acceder inicia sesión.</h1>
+	</div>
 	<div id="login-box">
 
-		<h2>Login with Username and Password</h2>
-
+		<h2>Inicio sesión</h2>
+		<br>
 		<c:if test="${not empty error}">
-			<div class="error">${error}</div>
+			<div class="errorlogin">${error}</div>
 		</c:if>
 		<c:if test="${not empty msg}">
 			<div class="msg">${msg}</div>
@@ -55,16 +31,16 @@
 
 		<table>
 			<tr>
-				<td>User:</td>
+				<td>Usuario:</td>
 				<td><input type='text' name='username'></td>
 			</tr>
 			<tr>
-				<td>Password:</td>
+				<td>Contraseña:</td>
 				<td><input type='password' name='password' /></td>
 			</tr>
 			<tr>
-				<td colspan='2'><input name="submit" type="submit"
-				  value="submit" /></td>
+				<td colspan='2'><br><input name="submit" type="submit"
+				  value="iniciar sesión" /></td>
 			</tr>
 		  </table>
 
@@ -73,6 +49,6 @@
 
 		</form>
 	</div>
-
+	<a href="/ProyectoSpringJPA">Página Principal</a>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <!DOCTYPE html>
@@ -26,6 +27,13 @@
 </head>
 <body style="padding: 10px;">
 
+		<!-- For login user -->
+		<c:url value="/j_spring_security_logout" var="logoutUrl" />
+		<form action="${logoutUrl}" method="post" id="logoutForm">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+		</form>
+<sec:authorize access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')">
 	<h1>Listado de Clientes</h1>
 	<c:if test="${ccmensaje != null}">
 		<h3>
@@ -65,7 +73,7 @@
 </table>
 <br/>
 	<a href="cliform">Agregar nuevo Cliente</a>&nbsp;&nbsp;
-	<a href="index.jsp">Volver al inicio</a>
-
+	<a href="main">Volver al inicio</a>
+</sec:authorize>
 </body>
 </html>

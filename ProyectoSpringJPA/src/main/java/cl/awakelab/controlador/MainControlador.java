@@ -11,20 +11,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
-
 @Controller
 public class MainControlador {
 	
 	static Logger log = Logger.getLogger(MainControlador.class.getName());
 	
-	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/main**" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage() {
 
 		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Login Form - Database Authentication");
-		model.addObject("message", "Esta es la página por defecto");
-		model.setViewName("hello");
+		model.setViewName("main");
 		log.info("Bienvenido al inicio");
 		return model;
 	}
@@ -47,11 +43,11 @@ public class MainControlador {
 
 	  ModelAndView model = new ModelAndView();
 	  if (error != null) {
-		model.addObject("error", "Invalid username and password!");
+		model.addObject("error", "Nombre de usuario o contraseña invalido");
 	  }
 
 	  if (logout != null) {
-		model.addObject("msg", "You've been logged out successfully.");
+		model.addObject("msg", "Has cerrado sesión con exito");
 	  }
 	  model.setViewName("login");
 	  return model;
@@ -74,29 +70,5 @@ public class MainControlador {
 	  model.setViewName("403");
 	  return model;
 	}
-	
-	/*
-    @RequestMapping("/error")
-    public String error(ModelMap model)
-    {
-        model.addAttribute("error", "true");
-        return "login";
-    }
 
-    @RequestMapping("/login")
-    public String login()
-    {
-        System.out.println("Ingreso a login");
-        return "login";
-    }
-    
-    @RequestMapping("/logout")
-    public String logout()
-    {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){    
-        	SecurityContextHolder.getContext().setAuthentication(null);
-        }
-        return "redirect:/login?logout"; 
-    }*/
 }
