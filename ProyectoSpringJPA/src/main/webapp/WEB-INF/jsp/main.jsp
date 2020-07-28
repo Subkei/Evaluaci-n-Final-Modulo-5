@@ -29,7 +29,7 @@
 				
   <hr class="my-4">
 </div>
-<sec:authorize access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')">
+<sec:authorize access="hasAnyRole('ROLE_CLIENTE')">
 <div class= "container" id="cont">
 <h2>Cliente</h2>
 
@@ -43,21 +43,39 @@
 <br/>
 </sec:authorize>
 
-<sec:authorize access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')">
+<sec:authorize access="hasAnyRole('ROLE_EMPLEADO')">
 <div class= "container" id="cont">
 
 	<h2>Profesional</h2>
 
 	<div class="list-group text-center">
-	<a href="viewcli" class="list-group-item list-group-item-action list-group-item-light">Gestionar Clientes</a>
-	<a href="viewemp" class="list-group-item list-group-item-action list-group-item-dark">Gestionar Empleados</a>
-	<a href="viewcap" class="list-group-item list-group-item-action list-group-item-light">Gestionar Capacitaciones</a>
-	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-dark">Gestionar Accidentes</a>
-	<a href="viewase" class="list-group-item list-group-item-action list-group-item-light">Gestionar Asesorias</a>
-	<a href="viewmej" class="list-group-item list-group-item-action list-group-item-dark">Gestionar Actividades de Mejoras</a>
-	<a href="viewpag" class="list-group-item list-group-item-action list-group-item-light">Gestionar Pagos</a>
+	<a href="viewcli" class="list-group-item list-group-item-action list-group-item-light">Revisar Clientes</a>
+	<a href="viewcap" class="list-group-item list-group-item-action list-group-item-dark">Gestionar Capacitaciones</a>
+	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-light">Gestionar Accidentes</a>
+	<a href="viewase" class="list-group-item list-group-item-action list-group-item-dark">Gestionar Asesorias</a>
+	<a href="viewmej" class="list-group-item list-group-item-action list-group-item-light">Gestionar Actividades de Mejoras</a>
 	<a href="viewvisita" class="list-group-item list-group-item-action list-group-item-dark">Gestionar Visitas</a>
 	<a href="viewchequeo" class="list-group-item list-group-item-action list-group-item-light">Gestionar Chequeos</a>
+	</div>
+</div>
+</sec:authorize>
+
+<sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+<div class= "container" id="cont">
+
+	<h2>Administración del Sistema</h2><br>
+	
+	<div class="list-group text-center">
+	<a href="viewcli" class="list-group-item list-group-item-action list-group-item-light">Gestionar Clientes</a>
+	<a href="viewpag" class="list-group-item list-group-item-action list-group-item-dark">Controlar Pagos de Clientes</a>
+	<a href="viewemp" class="list-group-item list-group-item-action list-group-item-light">Gestionar Profesionales</a>
+	
+	<br><h3>Reportes</h3><br>
+	
+	<a href="viewmej" class="list-group-item list-group-item-action list-group-item-dark">Reportes de Actividades de Mejoras</a>
+	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-light">Reportes de Accidentabilidad por Cliente*</a>
+	<a href="viewvisita" class="list-group-item list-group-item-action list-group-item-dark">Reportes por Cliente*</a>
+	<a href="viewchequeo" class="list-group-item list-group-item-action list-group-item-light">Reportes Globales*</a>
 	</div>
 </div>
 </sec:authorize>
@@ -66,6 +84,7 @@
 		<c:if test="${pageContext.request.userPrincipal.name != null}">
 			<h5>
 				Te has logeado como: ${pageContext.request.userPrincipal.name} <br>
+				
 				<a href="logout"> Cerrar sesión</a>
 			</h5>
 		</c:if>
@@ -74,14 +93,10 @@
 	<spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
 	<spring:url value="/resources/js/bootstrap.bundle.min.js" var="bootstrapbJS" />
 	<spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJS" />
+	<spring:url value="/resources/js/logoutform.js" var="logoutformJS" />
     <script src="${jqueryJS}"></script>
     <script src="${bootstrapbJS}"></script>
     <script src="${bootstrapJS}"></script>
-    
-	<script>
-		function formSubmit() {
-			document.getElementById("logoutForm").submit();
-		}
-	</script>    
+	<script src="${logoutformJS}"></script>
 </body>
 </html>

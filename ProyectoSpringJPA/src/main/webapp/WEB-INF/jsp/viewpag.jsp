@@ -57,7 +57,7 @@
 </table>
 <br/>
 	<a href="pagform">Agregar nuevo Pago</a>&nbsp;&nbsp;
-	<a href="index.jsp">Volver al inicio</a>
+	<a href="main">Volver al inicio</a>
 
 </body>
 </html>

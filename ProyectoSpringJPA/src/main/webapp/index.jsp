@@ -10,11 +10,9 @@
 
 	<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
 	<spring:url value="/resources/css/estilos.css" var="estilosCSS" />
-	<spring:url value="/resources/img/miImagen1.png" var="miImagen1" />
 	
 	<link href="${bootstrapCSS}" rel="stylesheet" />
 	<link href="${estilosCSS}" rel="stylesheet" />
-	<link href="${miImagen1}" rel="stylesheet" />
 </head>
 <body>
 	<div class="container-md text-center">
@@ -37,7 +35,7 @@
 
 	<h2> Nuestros Objetivos </h2>
 	<img class="img-fluid" src="<c:url value="/resources/img/miImagen2.png"/>" id="miImagen2"alt="Nuestros objetivos " width="260" height="145"style = "border-radius:50%" > 
-	<p>Planificación de actividades y el control de ejecución de las mismas, la gestión de clientes, la coordinación entre la empresa, los profesionales y los clientes para la respuesta temprana ante incidentes de seguridad.</p>
+	<p>Planificación de actividades y el control de ejecución de las mismas, la gestión de clientes, la coordinación entre la empresa, los profesionales y los clientes para la respuesta temprana ante incidentes de seguridad.</p>
 
 		
   </div>

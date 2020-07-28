@@ -28,7 +28,6 @@
 
 		<form name='loginForm'
 		  action="<c:url value='/j_spring_security_check' />" method='POST'>
-
 		<table>
 			<tr>
 				<td>Usuario:</td>
@@ -43,11 +42,12 @@
 				  value="iniciar sesión" /></td>
 			</tr>
 		  </table>
-
+		
 		  <input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
 
 		</form>
+		
 	</div>
 	<a href="/ProyectoSpringJPA">Página Principal</a>
 </body>

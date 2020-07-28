@@ -11,69 +11,38 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/" access="permitAll" />
 		<intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/main**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPLEADO', 'ROLE_CLIENTE')" />
 						
-		<!-- Vistas JSP Cliente Crear -->						
-		<intercept-url pattern="/c_aseform*" access="hasRole('ROLE_CLIENTE') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/r_accform*" access="hasRole('ROLE_CLIENTE') and hasRole('ROLE_ADMIN')" />
+		<!-- Vistas JSP Cliente Crear Asesoría y Reportar Accidente -->						
+		<intercept-url pattern="/c_aseform*" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/r_accform*" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')" />
 		
-		<!-- Vistas JSP Cliente Detalle -->
-		<intercept-url pattern="/c_asedetalle*" access="hasRole('ROLE_CLIENTE') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/r_accdetalle*" access="hasRole('ROLE_CLIENTE') and hasRole('ROLE_ADMIN')" />
+		<!-- Vistas JSP Cliente Detalle Asesoría y Reportar Accidente -->
+		<intercept-url pattern="/c_asedetalle*" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/r_accdetalle*" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')" />
 		
-		<!-- Vistas JSP Listados -->
-		<intercept-url pattern="/viewacc*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/viewase*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/viewcap*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/viewchequeo*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-<!-- 		<intercept-url pattern="/viewcli*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" /> -->
-		<intercept-url pattern="/viewemp*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/viewmej*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/viewpag*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />				
-		<intercept-url pattern="/viewvisita*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
+		<!-- Vistas JSP Listados comodin **-->
+		<intercept-url pattern="/view**" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		
-		<!-- Vistas JSP Crear -->
-		<intercept-url pattern="/accform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/aseform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/capform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/chequeoform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/cliform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/empform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/mejform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/pagform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/visitaform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		
-		<!-- Vistas JSP Actualizar -->
-		<intercept-url pattern="/acceditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/aseeditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/capeditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/chequeoeditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/clieditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/empeditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/mejeditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/pageditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/visitaeditform*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
+		<!-- Vistas JSP Crear y Actualizar -->
+		<intercept-url pattern="/**form*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+
+		<!-- Metodo controlador actualizar -->
+		<intercept-url pattern="/edit**/*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		
 		<!-- Vistas JSP Eliminar -->
-		<intercept-url pattern="/deleteacc*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deletease*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deletecap*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deletechequeo*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deletecli*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deleteemp*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deletemej*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deletepag*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deletevisita*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />		
+		<intercept-url pattern="/delete**/*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		
-		<!-- Vistas JSP Detalle -->
-		<intercept-url pattern="/accdetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/asedetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/capdetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/chequeodetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/clidetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/empdetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/mejdetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/pagdetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/visitadetalle*" access="hasRole('ROLE_EMPLEADO') and hasRole('ROLE_ADMIN')" />
+		<!-- Vistas JSP Detalle Listados -->
+		<intercept-url pattern="/accdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/asedetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/capdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/chequeodetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/clidetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/empdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/mejdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/pagdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/visitadetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		
 		<!-- access denied page -->
 		<access-denied-handler error-page="/403" />

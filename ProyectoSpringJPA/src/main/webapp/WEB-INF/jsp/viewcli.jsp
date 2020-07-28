@@ -33,7 +33,7 @@
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
 		</form>
-<sec:authorize access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')">
+
 	<h1>Listado de Clientes</h1>
 	<c:if test="${ccmensaje != null}">
 		<h3>
@@ -63,8 +63,10 @@
 		<td>${cli.getRubro()}</td>
 		<td>${cli.getDireccion()}</td>
 		<td>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
 			<a href="deletecli/${cli.getId()}">Eliminar</a>&nbsp;
 			<a href="editcli/${cli.getId()}">Editar</a>&nbsp;
+		</sec:authorize>			
 			<a href="cliente/${cli.getId()}">Detalle</a>&nbsp;
 		</td>
 		</tr>
@@ -74,6 +76,6 @@
 <br/>
 	<a href="cliform">Agregar nuevo Cliente</a>&nbsp;&nbsp;
 	<a href="main">Volver al inicio</a>
-</sec:authorize>
+
 </body>
 </html>

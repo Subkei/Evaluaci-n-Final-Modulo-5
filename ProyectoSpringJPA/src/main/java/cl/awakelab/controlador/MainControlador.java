@@ -16,12 +16,21 @@ public class MainControlador {
 	
 	static Logger log = Logger.getLogger(MainControlador.class.getName());
 	
-	@RequestMapping(value = { "/", "/main**" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView defaultPage() {
 
 		ModelAndView model = new ModelAndView();
-		model.setViewName("main");
+		model.setViewName("index");
 		log.info("Bienvenido al inicio");
+		return model;
+	}
+	
+	@RequestMapping(value = "/main**", method = RequestMethod.GET)
+	public ModelAndView mainPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("main");
+		log.info("Bienvenido a los CRUD");
 		return model;
 	}
 	
