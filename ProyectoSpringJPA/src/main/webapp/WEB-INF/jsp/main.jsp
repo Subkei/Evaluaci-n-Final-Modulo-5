@@ -29,7 +29,7 @@
 				
   <hr class="my-4">
 </div>
-<sec:authorize access="hasAnyRole('ROLE_CLIENTE')">
+<sec:authorize access="hasRole('ROLE_CLIENTE')">
 <div class= "container" id="cont">
 <h2>Cliente</h2>
 
@@ -43,7 +43,7 @@
 <br/>
 </sec:authorize>
 
-<sec:authorize access="hasAnyRole('ROLE_EMPLEADO')">
+<sec:authorize access="hasRole('ROLE_EMPLEADO')">
 <div class= "container" id="cont">
 
 	<h2>Profesional</h2>
@@ -60,7 +60,7 @@
 </div>
 </sec:authorize>
 
-<sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+<sec:authorize access="hasRole('ROLE_ADMIN')">
 <div class= "container" id="cont">
 
 	<h2>Administración del Sistema</h2><br>
@@ -74,8 +74,8 @@
 	
 	<a href="viewmej" class="list-group-item list-group-item-action list-group-item-dark">Reportes de Actividades de Mejoras</a>
 	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-light">Reportes de Accidentabilidad por Cliente*</a>
-	<a href="viewvisita" class="list-group-item list-group-item-action list-group-item-dark">Reportes por Cliente*</a>
-	<a href="viewchequeo" class="list-group-item list-group-item-action list-group-item-light">Reportes Globales*</a>
+	<a href="#" class="list-group-item list-group-item-action list-group-item-dark">Reportes por Cliente*</a>
+	<a href="#" class="list-group-item list-group-item-action list-group-item-light">Reportes Globales*</a>
 	</div>
 </div>
 </sec:authorize>
