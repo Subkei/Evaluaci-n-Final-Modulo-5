@@ -55,7 +55,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/editemp/*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/editvisita/*" access="hasRole('ROLE_EMPLEADO')" />
 		
-		<!-- Vistas JSP Eliminar -->
+		<!-- Metodo controlador eliminar -->
 		<intercept-url pattern="/deletease/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/deleteacc/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/deletecap/*" access="hasRole('ROLE_EMPLEADO')" />

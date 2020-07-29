@@ -16,12 +16,13 @@
     
     <!-- jQuery, datatable -->
     <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
-    <spring:url value="/resources/js/jquery.dataTables.js" var="datatablesJS"/>
+    <spring:url value="/resources/js/datatables.js" var="datatablesJS"/>
    	<spring:url value="/resources/js/jquery.dataTables.es.js" var="datatablesEsJS"/>
     
     <script src="${jqueryJS}"></script>
     <script src="${datatablesJS}"></script>
     <script src="${datatablesEsJS}"></script>
+    
 </head>
 <body style="padding: 10px;">
 
