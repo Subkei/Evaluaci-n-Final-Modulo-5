@@ -32,7 +32,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "mesanio" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="mesanio" placeholder="Ingresa en formato mes/año, 05/2020"/>
+              <form:input type="month" class="col-6 input-group" path="mesanio"/>
           </div>
           <br><br>
           <div class="row">
@@ -41,7 +41,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "montoregular" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="montoregular" placeholder="Ingresa solo valores numéricos"/>
+              <form:input type="number" class="col-6 input-group" path="montoregular" placeholder="Ingresa solo valores numéricos"/>
           </div>
           <br><br>
           <div class="row">
@@ -50,7 +50,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "montoadicionales" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="montoadicionales" placeholder="Ingresa solo valores numéricos"/>
+              <form:input type="number" class="col-6 input-group" path="montoadicionales" placeholder="Ingresa solo valores numéricos"/>
           </div>
           <br><br>
           <div class="row">
@@ -59,7 +59,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "cliente_id" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="cliente_id" placeholder="Corresponde al ID de un cliente valido"/>
+              <form:input type="number" class="col-6 input-group" path="cliente_id" placeholder="Corresponde al ID de un cliente valido"/>
           </div>                              
           <br><br><br>
            <div class="row">

@@ -10,7 +10,6 @@ http://www.springframework.org/schema/security/spring-security.xsd">
     <!-- enable use-expressions -->
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/" access="permitAll" />
-		<intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/main**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPLEADO', 'ROLE_CLIENTE')" />
 						
 		<!-- Vistas JSP Cliente Crear Asesoría y Reportar Accidente -->						

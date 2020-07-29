@@ -32,7 +32,7 @@
 	<thead>		
 	<tr>
 		<th>ID Pago</th>
-		<th>Mes/Año</th>
+		<th>Año/Mes</th>
 		<th>Monto Regular</th>
 		<th>Monto Adicionales</th>
 		<th>ID Cliente</th>
