@@ -1,11 +1,13 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>     
 <!doctype html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Detalle Pago de Cliente</title>
-<!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Bootstrap CSS-->
+    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+    
+    <link href="${bootstrapCSS}" rel="stylesheet" />
 </head>
 <body>
 

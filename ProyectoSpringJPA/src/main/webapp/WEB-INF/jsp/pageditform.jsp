@@ -19,13 +19,14 @@
     <title>Editar Pago Clientes</title>
   </head>
   <body>
-    <div class="jumbotron">
+   <div class="jumbotron">
         <header class="text-center">
             <h2>Editar Pago Clientes</h2>
         </header>
-    </div> 
-     <form:form method="post" action="/ProyectoSpringJPA/pageditsave" modelAttribute="pagos">
-      <div class="container">
+   </div> 
+	<form:form method="post" action="/ProyectoSpringJPA/pageditsave" modelAttribute="pagos">
+	<form:errors path = "*" cssClass = "errorblock" element = "div" />      
+      	<div class="container">
           <div class="row">
               <form:label path="mesanio" class="col-4 lead font-weight-normal">Mes/Año:</form:label>
               <div class="input-group-prepend">
