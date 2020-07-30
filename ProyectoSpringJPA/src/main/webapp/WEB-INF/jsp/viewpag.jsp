@@ -26,7 +26,7 @@
 </head>
 <body style="padding: 10px;">
 
-	<h1>Listar Pagos de Clientes</h1>
+	<h1 class="display-4">Listar Pagos de Clientes</h1>
 
 <table id="tabla" class="table table-striped table-bordered" style="width: 100%; ">
 	<thead>		
@@ -49,16 +49,17 @@
 			<td>$${pag.getMontoadicionales()}</td>
 			<td>${pag.getCliente_id()}</td>
 			<td>
-				<a href="deletepag/${pag.getIdpago()}">Eliminar</a>&nbsp;
-				<a href="editpag/${pag.getIdpago()}">Editar</a>
+				<a class="btn btn-danger mb-1" title="Eliminar pago" href="deletepag/${pag.getIdpago()}">Eliminar</a>&nbsp;
+				<a class="btn btn-warning mb-1" title="Editar pago" href="editpag/${pag.getIdpago()}">Editar</a>&nbsp;
+				<a class="btn btn-info mb-1" title="Detalle pago" href="pagos/${pag.getIdpago()}">Detalle</a>&nbsp;
 			</td>
 		</tr>
 	</c:forEach>
 	</tbody>
 </table>
 <br/>
-	<a href="pagform">Agregar nuevo Pago</a>&nbsp;&nbsp;
-	<a href="main">Volver al inicio</a>
+	<a class="btn btn-success mb-1" title="Agregar nuevo pago" href="pagform">Agregar nuevo Pago</a>&nbsp;&nbsp;
+	<a class="btn btn-secondary mb-1" title="Volver al inicio" href="main">Volver al inicio</a>
 
 </body>
 </html>

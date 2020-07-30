@@ -34,7 +34,7 @@
 				value="${_csrf.token}" />
 		</form>
 
-	<h1>Listado de Clientes</h1>
+	<h1 class="display-4">Listado de Clientes</h1>
 	<c:if test="${ccmensaje != null}">
 		<h3>
 		<c:out value="${ccmensaje}"></c:out>
@@ -64,18 +64,18 @@
 		<td>${cli.getDireccion()}</td>
 		<td>
 		<sec:authorize access="hasRole('ROLE_ADMIN')">
-			<a href="deletecli/${cli.getId()}">Eliminar</a>&nbsp;
-			<a href="editcli/${cli.getId()}">Editar</a>&nbsp;
+			<a class="btn btn-danger mb-1" title="Eliminar cliente" href="deletecli/${cli.getId()}">Eliminar</a>&nbsp;
+			<a class="btn btn-warning mb-1" title="Editar cliente" href="editcli/${cli.getId()}">Editar</a>&nbsp;
 		</sec:authorize>			
-			<a href="cliente/${cli.getId()}">Detalle</a>&nbsp;
+			<a class="btn btn-info mb-1" title="Detalle cliente" href="cliente/${cli.getId()}">Detalle</a>&nbsp;
 		</td>
 		</tr>
 	</c:forEach>
 	</tbody>
 </table>
 <br/>
-	<a href="cliform">Agregar nuevo Cliente</a>&nbsp;&nbsp;
-	<a href="main">Volver al inicio</a>
+	<a class="btn btn-success mb-1" title="Agregar nuevo cliente" href="cliform">Agregar nuevo Cliente</a>&nbsp;&nbsp;
+	<a class="btn btn-secondary mb-1" title="Volver al inicio" href="main">Volver al inicio</a>
 
 </body>
 </html>
