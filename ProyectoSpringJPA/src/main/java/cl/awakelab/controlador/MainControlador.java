@@ -30,7 +30,7 @@ public class MainControlador {
 
 		ModelAndView model = new ModelAndView();
 		model.setViewName("main");
-		log.info("Bienvenido a los CRUD");
+		log.info("Bienvenido al Menu");
 		return model;
 	}
 
@@ -44,7 +44,7 @@ public class MainControlador {
 	  }
 
 	  if (logout != null) {
-		model.addObject("msg", "Has cerrado sesión con exito");
+		model.addObject("msg", "Has cerrado sesión con exito"+"<br>");
 	  }
 	  model.setViewName("login");
 	  return model;

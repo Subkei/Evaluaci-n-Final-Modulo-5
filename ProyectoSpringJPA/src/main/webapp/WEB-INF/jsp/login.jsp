@@ -5,8 +5,10 @@
 <head>
 <title>Página de Login</title>
 	<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+	<spring:url value="/resources/css/estilos.css" var="estilosCSS" />
 	<spring:url value="/resources/css/login.css" var="loginCSS" />
 	
+	<link href="${estilosCSS}" rel="stylesheet" />
 	<link href="${bootstrapCSS}" rel="stylesheet" />
 	<link href="${loginCSS}" rel="stylesheet" />
 	

@@ -8,6 +8,12 @@ body {
 	background-color: AliceBlue;
 	text-align: center;
 }
+
+.body-main {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
 /*css de validador*/
 .error {
 	color: #ff0000;
