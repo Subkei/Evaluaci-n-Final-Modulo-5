@@ -26,9 +26,18 @@
               <li>Año/Mes: ${pagosData.getMesanio()}</li>
               <li>Monto Regular: $${pagosData.getMontoregular()}</li>
               <li>Monto Adicionales: $${pagosData.getMontoadicionales()}</li>
-              <li>ID Cliente: ${pagosData.getCliente_id()}</li>
             </ul>
-            <a type="button" class="btn btn-lg btn-primary" href="/ProyectoSpringJPA/viewpag">Volver al Listado</a>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>ID Cliente: ${pagosData.cliente.id}</li>
+              <li>Nombre: ${pagosData.cliente.nombre}</li>
+              <li>Telefono: ${pagosData.cliente.telefono}</li>
+              <li>Correo electronico: ${pagosData.cliente.correoelectronico}</li>
+              <li>Rubro: ${pagosData.cliente.rubro}</li>
+              <li>Dirección: ${pagosData.cliente.direccion}</li>              
+            </ul>            
+            <a class="btn btn-primary mb-1" href="/ProyectoSpringJPA/viewpag">Volver al Listado</a>
           </div>
         </div>
       </div>

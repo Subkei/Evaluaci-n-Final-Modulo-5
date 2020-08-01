@@ -22,19 +22,33 @@ public class Pagos {
 	private int montoadicionales;
 	@NotNull
 	private int cliente_id;
-
+	
+	@ManyToOne
+	@JoinColumn(name="cliente_id", insertable = false, updatable = false)
+	Cliente cliente;
 
 	public Pagos() {
 	}
 
+	public Pagos(int idpago, String mesanio, int montoregular, int montoadicionales, Cliente cliente) {
+		this.idpago = idpago;
+		this.mesanio = mesanio;
+		this.montoregular = montoregular;
+		this.montoadicionales = montoadicionales;
+		this.cliente = cliente;
+	}
+	
+	
+	
 	public Pagos(int idpago, String mesanio, int montoregular, int montoadicionales, int cliente_id) {
+		super();
 		this.idpago = idpago;
 		this.mesanio = mesanio;
 		this.montoregular = montoregular;
 		this.montoadicionales = montoadicionales;
 		this.cliente_id = cliente_id;
 	}
-	
+
 	public int getIdpago() {
 		return idpago;
 	}
@@ -69,12 +83,18 @@ public class Pagos {
 		this.montoadicionales = montoadicionales;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
 
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	
 	public int getCliente_id() {
 		return cliente_id;
 	}
-
-
 
 	public void setCliente_id(int cliente_id) {
 		this.cliente_id = cliente_id;
@@ -83,7 +103,9 @@ public class Pagos {
 	@Override
 	public String toString() {
 		return "Pagos [idpago=" + idpago + ", mesanio=" + mesanio + ", montoregular=" + montoregular
-				+ ", montoadicionales=" + montoadicionales + ", cliente_id=" + cliente_id + "]";
+				+ ", montoadicionales=" + montoadicionales + ", cliente=" + cliente + "]";
 	}
+
+
 	
 }

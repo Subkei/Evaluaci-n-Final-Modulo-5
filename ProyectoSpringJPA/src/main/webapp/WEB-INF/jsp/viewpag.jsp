@@ -36,7 +36,10 @@
 		<th>Monto Regular</th>
 		<th>Monto Adicionales</th>
 		<th>ID Cliente</th>
-		<th>Acciones</th>
+		<th>Nombre</th>
+		<th>Telefono</th>
+		<th>Correo electrónico</th>
+		<th>Acciones</th>				
 	</tr>
 	</thead>
 	<tbody>
@@ -47,7 +50,10 @@
 			<td>${pag.getMesanio()}</td>
 			<td>$${pag.getMontoregular()}</td>
 			<td>$${pag.getMontoadicionales()}</td>
-			<td>${pag.getCliente_id()}</td>
+			<td>${pag.cliente.id}</td>
+			<td>${pag.cliente.nombre}</td>
+            <td>${pag.cliente.telefono}</td>
+            <td>${pag.cliente.correoelectronico}</td>			
 			<td>
 				<a class="btn btn-danger mb-1" title="Eliminar pago" href="deletepag/${pag.getIdpago()}">Eliminar</a>&nbsp;
 				<a class="btn btn-warning mb-1" title="Editar pago" href="editpag/${pag.getIdpago()}">Editar</a>&nbsp;
