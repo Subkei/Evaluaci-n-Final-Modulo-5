@@ -29,7 +29,9 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/viewmej*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/viewemp*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/viewpag*" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/viewvisita*" access="hasRole('ROLE_EMPLEADO')" />		
+		<intercept-url pattern="/viewvisita*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/listadosposts*" access="hasRole('ROLE_ADMIN')"/>		
+
 		
 		
 		<!-- Vistas JSP Crear y Actualizar -->

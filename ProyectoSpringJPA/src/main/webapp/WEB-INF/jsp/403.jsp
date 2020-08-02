@@ -20,14 +20,14 @@
 			<h2>No tiene permiso para acceder a esta página</h2>
 				</c:when>
 		<c:otherwise>
-	<div id="notfound">
-		<div class="notfound">
-			<div class="notfound-403">
-				<h1>4<span>0</span>3</h1>
+			<div id="notfound">
+				<div class="notfound">
+					<div class="notfound-403">
+						<h1>4<span>0</span>3</h1>
+					</div>
+						<h1>El usuario "${username}"</h1><br><h2>No tiene permiso para acceder a esta página.</h2>
+				</div>
 			</div>
-				<h1>El usuario "${username}"</h1><br><h2>No tiene permiso para acceder a esta página.</h2>
-		</div>
-	</div>			
 		</c:otherwise>
 	</c:choose>
 
