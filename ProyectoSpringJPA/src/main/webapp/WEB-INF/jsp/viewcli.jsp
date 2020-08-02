@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <!DOCTYPE html>
@@ -16,7 +17,7 @@
     
     <!-- jQuery, datatable -->
     <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
-    <spring:url value="/resources/js/jquery.dataTables.js" var="datatablesJS"/>
+    <spring:url value="/resources/js/datatables.js" var="datatablesJS"/>
    	<spring:url value="/resources/js/jquery.dataTables.es.js" var="datatablesEsJS"/>
     
     <script src="${jqueryJS}"></script>
@@ -26,12 +27,15 @@
 </head>
 <body style="padding: 10px;">
 
-	<h1>Listado de Clientes</h1>
-	<c:if test="${ccmensaje != null}">
-		<h3>
-		<c:out value="${ccmensaje}"></c:out>
-		</h3>
-	</c:if>
+		<!-- For login user -->
+		<c:url value="/j_spring_security_logout" var="logoutUrl" />
+		<form action="${logoutUrl}" method="post" id="logoutForm">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+		</form>
+
+	<h1 class="display-4">Listado de Clientes</h1>
+
 <table id="tabla" class="table table-striped table-bordered" style="width: 100%; ">
 	<thead>		
 	<tr>
@@ -55,17 +59,19 @@
 		<td>${cli.getRubro()}</td>
 		<td>${cli.getDireccion()}</td>
 		<td>
-			<a href="deletecli/${cli.getId()}">Eliminar</a>&nbsp;
-			<a href="editcli/${cli.getId()}">Editar</a>&nbsp;
-			<a href="cliente/${cli.getId()}">Detalle</a>&nbsp;
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<a class="btn btn-danger mb-1" title="Eliminar cliente" href="deletecli/${cli.getId()}">Eliminar</a>&nbsp;
+			<a class="btn btn-warning mb-1" title="Editar cliente" href="editcli/${cli.getId()}">Editar</a>&nbsp;
+		</sec:authorize>			
+			<a class="btn btn-info mb-1" title="Detalle cliente" href="cliente/${cli.getId()}">Detalle</a>&nbsp;
 		</td>
 		</tr>
 	</c:forEach>
 	</tbody>
 </table>
 <br/>
-	<a href="cliform">Agregar nuevo Cliente</a>&nbsp;&nbsp;
-	<a href="index.jsp">Volver al inicio</a>
+	<a class="btn btn-success mb-1" title="Agregar nuevo cliente" href="cliform">Agregar nuevo Cliente</a>&nbsp;&nbsp;
+	<a class="btn btn-secondary mb-1" title="Volver al inicio" href="main">Volver al inicio</a>
 
 </body>
 </html>

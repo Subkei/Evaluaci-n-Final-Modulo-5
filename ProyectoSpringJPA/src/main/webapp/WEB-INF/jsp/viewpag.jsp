@@ -16,22 +16,23 @@
     
     <!-- jQuery, datatable -->
     <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
-    <spring:url value="/resources/js/jquery.dataTables.js" var="datatablesJS"/>
+    <spring:url value="/resources/js/datatables.js" var="datatablesJS"/>
    	<spring:url value="/resources/js/jquery.dataTables.es.js" var="datatablesEsJS"/>
     
     <script src="${jqueryJS}"></script>
     <script src="${datatablesJS}"></script>
     <script src="${datatablesEsJS}"></script>
+    
 </head>
 <body style="padding: 10px;">
 
-	<h1>Listar Pagos de Clientes</h1>
+	<h1 class="display-4">Listar Pagos de Clientes</h1>
 
 <table id="tabla" class="table table-striped table-bordered" style="width: 100%; ">
 	<thead>		
 	<tr>
 		<th>ID Pago</th>
-		<th>Mes/Año</th>
+		<th>Año/Mes</th>
 		<th>Monto Regular</th>
 		<th>Monto Adicionales</th>
 		<th>ID Cliente</th>
@@ -48,16 +49,17 @@
 			<td>$${pag.getMontoadicionales()}</td>
 			<td>${pag.getCliente_id()}</td>
 			<td>
-				<a href="deletepag/${pag.getIdpago()}">Eliminar</a>&nbsp;
-				<a href="editpag/${pag.getIdpago()}">Editar</a>
+				<a class="btn btn-danger mb-1" title="Eliminar pago" href="deletepag/${pag.getIdpago()}">Eliminar</a>&nbsp;
+				<a class="btn btn-warning mb-1" title="Editar pago" href="editpag/${pag.getIdpago()}">Editar</a>&nbsp;
+				<a class="btn btn-info mb-1" title="Detalle pago" href="pagos/${pag.getIdpago()}">Detalle</a>&nbsp;
 			</td>
 		</tr>
 	</c:forEach>
 	</tbody>
 </table>
 <br/>
-	<a href="pagform">Agregar nuevo Pago</a>&nbsp;&nbsp;
-	<a href="index.jsp">Volver al inicio</a>
+	<a class="btn btn-success mb-1" title="Agregar nuevo pago" href="pagform">Agregar nuevo Pago</a>&nbsp;&nbsp;
+	<a class="btn btn-secondary mb-1" title="Volver al inicio" href="main">Volver al inicio</a>
 
 </body>
 </html>

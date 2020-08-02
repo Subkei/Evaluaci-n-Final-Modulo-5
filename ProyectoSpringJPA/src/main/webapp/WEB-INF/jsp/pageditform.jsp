@@ -19,20 +19,21 @@
     <title>Editar Pago Clientes</title>
   </head>
   <body>
-    <div class="jumbotron">
+   <div class="jumbotron">
         <header class="text-center">
             <h2>Editar Pago Clientes</h2>
         </header>
-    </div> 
-     <form:form method="post" action="/ProyectoSpringJPA/pageditsave" modelAttribute="pagos">
-      <div class="container">
+   </div> 
+	<form:form method="post" action="/ProyectoSpringJPA/pageditsave" modelAttribute="pagos">
+	<form:errors path = "*" cssClass = "errorblock" element = "div" />      
+      	<div class="container">
           <div class="row">
               <form:label path="mesanio" class="col-4 lead font-weight-normal">Mes/Año:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "mesanio" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="mesanio" placeholder="Ingresa en formato mes/año, 05/2020"/>
+              <form:input type="month" class="col-6 input-group" path="mesanio"/>
           </div>
           <br><br>
           <div class="row">
@@ -41,7 +42,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "montoregular" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="montoregular" placeholder="Ingresa solo valores numéricos"/>
+              <form:input type="number" class="col-6 input-group" path="montoregular" placeholder="Ingresa solo valores numéricos"/>
           </div>
           <br><br>
           <div class="row">
@@ -50,7 +51,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "montoadicionales" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="montoadicionales" placeholder="Ingresa solo valores numéricos"/>
+              <form:input type="number" class="col-6 input-group" path="montoadicionales" placeholder="Ingresa solo valores numéricos"/>
           </div>
           <br><br>
           <div class="row">
@@ -59,7 +60,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "cliente_id" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="cliente_id" placeholder="Corresponde al ID de un cliente valido"/>
+              <form:input type="number" class="col-6 input-group" path="cliente_id" placeholder="Corresponde al ID de un cliente valido"/>
           </div>                              
           <br><br><br>
            <div class="row">

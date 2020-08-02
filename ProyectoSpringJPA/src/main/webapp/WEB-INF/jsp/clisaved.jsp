@@ -1,39 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>    
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Cliente ok</title>
+    <!-- Bootstrap CSS-->
+    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+    
+    <link href="${bootstrapCSS}" rel="stylesheet" />
 </head>
 <body>
+<div class="pt-md-5 pb-md-4 mx-auto">
+    </div>
 
-<h2>${mensaje}</h2>
-      <table>
-         <tr>
-            <td>Nombre</td>
-            <td>${nombre}</td>
-         </tr>
-         <tr>
-            <td>Telefono</td>
-            <td>${telefono}</td>
-         </tr>
-         <tr>
-            <td>Correo electrónico</td>
-            <td>${correoelectronico}</td>
-         </tr>
-         <tr>
-            <td>Rubro</td>
-            <td>${rubro}</td>
-         </tr>
-         <tr>
-            <td>Dirección</td>
-            <td>${direccion}</td>
-         </tr>                  
-      </table>
-      <br>
-      <a class="btn btn-warning col-4" href="viewcli" role="button">Volver</a>  
+    <div class="container">
+      <div class="card-deck mb-3">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">${mensaje}</h4>
+      </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+	            <li>Nombre: ${nombre}</li>
+	            <li>Telefono: ${telefono}</li>
+	            <li>Correo electronico: ${correoelectronico}</li>
+	            <li>Rubro: ${rubro}</li>
+	            <li>Dirección: ${direccion}</li>
+            </ul>
+            <a type="button" class="btn btn-lg btn-primary" href="viewcli">Volver</a>
+          </div>
+        </div>
+      </div>
+    </div>
       
 </body>
 </html>

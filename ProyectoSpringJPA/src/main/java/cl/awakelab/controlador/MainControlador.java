@@ -1,42 +1,71 @@
 package cl.awakelab.controlador;
 
 import org.apache.log4j.Logger;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainControlador {
 	
 	static Logger log = Logger.getLogger(MainControlador.class.getName());
 	
-	@RequestMapping("/")
-	public String index() {
-		log.info("Bienvenido al inicio");
-		return "index";
-	}
-	/*
-    @RequestMapping("/error")
-    public String error(ModelMap model)
-    {
-        model.addAttribute("error", "true");
-        return "login";
-    }
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView defaultPage() {
 
-    @RequestMapping("/login")
-    public String login()
-    {
-        System.out.println("Ingreso a login");
-        return "login";
-    }
-    
-    @RequestMapping("/logout")
-    public String logout()
-    {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){    
-        	SecurityContextHolder.getContext().setAuthentication(null);
-        }
-        return "redirect:/login?logout"; 
-    }*/
+		ModelAndView model = new ModelAndView();
+		model.setViewName("index");
+		log.info("Bienvenido al inicio");
+		return model;
+	}
+	
+	@RequestMapping(value = "/main**", method = RequestMethod.GET)
+	public ModelAndView mainPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("main");
+		log.info("Bienvenido al Menu");
+		return model;
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+		@RequestParam(value = "logout", required = false) String logout) {
+
+	  ModelAndView model = new ModelAndView();
+	  if (error != null) {
+		model.addObject("error", "Nombre de usuario o contraseña invalido");
+	  }
+
+	  if (logout != null) {
+		model.addObject("msg", "Has cerrado sesión con exito"+"<br>");
+	  }
+	  model.setViewName("login");
+	  return model;
+
+	}
+
+	//página error 403 acceso denegado
+	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	public ModelAndView accesssDenied() {
+
+	  ModelAndView model = new ModelAndView();
+
+	  //comprueba si el usuario está logeado
+	  Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	  if (!(auth instanceof AnonymousAuthenticationToken)) {
+		UserDetails userDetail = (UserDetails) auth.getPrincipal();
+		model.addObject("username", userDetail.getUsername());
+	  }
+
+	  model.setViewName("403");
+	  return model;
+	}
+
 }

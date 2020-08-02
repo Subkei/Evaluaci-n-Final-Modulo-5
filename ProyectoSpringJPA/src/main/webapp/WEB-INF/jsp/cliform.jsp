@@ -1,5 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>      
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>    
 
 <!doctype html>
 <html lang="en">
@@ -43,7 +43,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "telefono" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="telefono" min="9" maxlength="9" placeholder="Ingresa un número de 9 digitos"/>
+              <form:input class="col-6 input-group" path="telefono" minlength="9" maxlength="9" placeholder="Ingresa un número de 9 digitos"/>
           </div>
           <br><br>
           <div class="row">

@@ -41,7 +41,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input class="col-6 input-group" path="telefono" min="9" maxlength="9" placeholder="Ingresa un número de 9 digitos"/>
+              <form:input class="col-6 input-group" path="telefono" minlength="9" maxlength="9" placeholder="Ingresa un número de 9 digitos"/>
           </div>
           <br><br>
           <div class="row">

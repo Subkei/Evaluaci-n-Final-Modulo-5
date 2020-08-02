@@ -65,7 +65,7 @@ public class PagosControlador {
     public String Pagos(Model m, @PathVariable int idpago) {
     	Pagos pag = servicioPag.getPagosById(idpago);
     	m.addAttribute("pagosData",pag);
-    	return "buscarPagos";
+    	return "pagdetalle";
     }
     //formulario actualizar pagos
     @RequestMapping(value="/editpag/{idpago}")    

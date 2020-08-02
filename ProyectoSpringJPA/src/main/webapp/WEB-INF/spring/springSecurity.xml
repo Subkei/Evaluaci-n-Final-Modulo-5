@@ -7,32 +7,100 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/security 
 http://www.springframework.org/schema/security/spring-security.xsd">
 
-<!-- 	<http auto-config="true"> -->
-<!-- 		<intercept-url pattern="/" access="permitAll" /> -->
-<!-- 		<intercept-url pattern="/**" access="hasRole('ADMIN')" /> -->
+    <!-- enable use-expressions -->
+	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/main**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPLEADO', 'ROLE_CLIENTE')" />
+						
+		<!-- Vistas JSP Cliente Crear Asesoría y Reportar Accidente -->						
+		<intercept-url pattern="/c_aseform*" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/r_accform*" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')" />
 		
-<!-- 		<intercept-url pattern="/c_aseform" access="hasRole('CLIENTE')" /> -->
-<!-- 		<intercept-url pattern="/r_accform" access="hasRole('CLIENTE')" /> -->
+		<!-- Vistas JSP Cliente Detalle Asesoría y Reportar Accidente -->
+		<intercept-url pattern="/c_asedetalle*" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/r_accdetalle*" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMIN')" />
 		
-<!-- 		<intercept-url pattern="/view**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/cli**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/emp**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/mej**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/pag**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/cheq**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/acc**" access="hasRole('EMPLEADO')" /> -->
-<!-- 		<intercept-url pattern="/ase**" access="hasRole('EMPLEADO')" /> -->
+		<!-- Vistas JSP Listados comodin **-->
+		<intercept-url pattern="/viewase*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/viewacc*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/viewcap*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/viewchequeo*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/viewcli*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/viewmej*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/viewemp*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/viewpag*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/viewvisita*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/listadosposts*" access="hasRole('ROLE_ADMIN')"/>		
 		
-<!-- 	</http> -->
-	
-<!-- 	<authentication-manager> -->
-<!-- 		<authentication-provider> -->
-<!-- 		<user-service> -->
-<!-- 			<user name="admin" password="{noop}1234" authorities="ROLE_ADMIN" /> -->
-<!-- 			<user name="cliente1" password="{noop}1234" authorities="ROLE_CLIENTE" /> -->
-<!-- 			<user name="empleado1" password="{noop}1234" authorities="ROLE_EMPLEADO" /> -->
-<!-- 		</user-service> -->
-<!-- 		</authentication-provider> -->
-<!-- 	</authentication-manager> -->
-	
+		
+		<!-- Vistas JSP Crear y Actualizar -->
+		<intercept-url pattern="/aseform*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/accform*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/capform*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/chequeoform*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/cliform*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/mejform*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/pagform*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/empform*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/visitaform*" access="hasRole('ROLE_EMPLEADO')" />
+		
+		<!-- Metodo controlador actualizar -->
+		<intercept-url pattern="/editase/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/editacc/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/editcap/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/editchequeo/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/editcli/*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/editmej/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/editpag/*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/editemp/*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/editvisita/*" access="hasRole('ROLE_EMPLEADO')" />
+		
+		<!-- Metodo controlador eliminar -->
+		<intercept-url pattern="/deletease/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/deleteacc/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/deletecap/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/deletechequeo/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/deletecli/*" access="hasRole('ROLE_ADMIN')" />		
+		<intercept-url pattern="/deletemej/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/deletepag/*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/deleteemp/*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/deletevisita/*" access="hasRole('ROLE_EMPLEADO')" />
+		
+		<!-- Vistas JSP Detalle Listados -->
+		<intercept-url pattern="/accdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/asedetalle*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/capdetalle*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/chequeodetalle*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/clidetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/empdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/mejdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/pagdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/visitadetalle*" access="hasRole('ROLE_EMPLEADO')" />
+		
+		<!-- access denied page -->
+		<access-denied-handler error-page="/403" />
+		
+		<form-login login-processing-url="/j_spring_security_check"
+		    login-page="/login" 
+		    default-target-url="/main" 
+			authentication-failure-url="/login?error" 
+			username-parameter="username"
+			password-parameter="password" />
+		<logout logout-success-url="/login?logout"  />
+		
+		<!-- enable csrf protection -->
+		<csrf disabled="true"/>
+	</http>
+	<!-- Select users and user_roles from database -->
+	<authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="bcrypt" />
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query=
+					"select username, password, 1 as enabled from usuarios where username=?"
+				authorities-by-username-query=
+					"select username, role_user as authority from roles_usuarios where username =?  " />
+		</authentication-provider>
+	</authentication-manager>
+
 </bean:beans>
