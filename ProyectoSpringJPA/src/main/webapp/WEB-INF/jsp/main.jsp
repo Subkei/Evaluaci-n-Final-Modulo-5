@@ -6,6 +6,7 @@
 	<head>		
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 		<title>Menu</title>
 		
 		<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
@@ -15,6 +16,7 @@
 		<link href="${estilosCSS}" rel="stylesheet" />
 
 	</head>
+
 <body class="body-main">
 <nav class="navbar navbar-expand navbar-light bg-light">
   <div class="container">
@@ -41,7 +43,7 @@
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
 		</form>
-				
+
   <hr class="my-4 bg-light">
 
 <!-- Sección Cliente -->
@@ -96,7 +98,15 @@
 </div>
 </sec:authorize>
 
-<br>
+		<br>
+		<!-- cierre de sesión -->
+		<c:if test="${pageContext.request.userPrincipal.name != null}">
+			<h5>
+				Te has logeado como: ${pageContext.request.userPrincipal.name} <br>
+				
+				<a href="logout"> Cerrar sesión</a>
+			</h5>
+		</c:if>
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->   
 	<spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />

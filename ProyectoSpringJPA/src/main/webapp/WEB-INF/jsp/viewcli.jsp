@@ -35,7 +35,6 @@
 		</form>
 
 	<h1 class="display-4">Listado de Clientes</h1>
-
 <table id="tabla" class="table table-striped table-bordered" style="width: 100%; ">
 	<thead>		
 	<tr>

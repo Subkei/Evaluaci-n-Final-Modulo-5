@@ -60,6 +60,5 @@
 <br/>
 	<a class="btn btn-success mb-1" title="Agregar nuevo pago" href="pagform">Agregar nuevo Pago</a>&nbsp;&nbsp;
 	<a class="btn btn-secondary mb-1" title="Volver al inicio" href="main">Volver al inicio</a>
-
 </body>
 </html>

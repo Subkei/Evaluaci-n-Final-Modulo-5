@@ -44,6 +44,7 @@
                 <form:errors path = "telefono" cssClass = "error" />
               </div>
               <form:input class="col-6 input-group" path="telefono" minlength="9" maxlength="9" placeholder="Ingresa un número de 9 digitos"/>
+
           </div>
           <br><br>
           <div class="row">
