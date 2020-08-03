@@ -1,0 +1,8 @@
+Usuarios
+
+usuario: Admin
+contraseña: 123
+usuario: empleado1
+contraseña: empleado1
+usuario: cliente1
+contraseña: cliente1
