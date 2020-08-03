@@ -31,8 +31,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/viewpag*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/viewvisita*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/listadosposts*" access="hasRole('ROLE_ADMIN')"/>		
-
-		
+		<intercept-url pattern="/reportecli**" access="hasRole('ROLE_ADMIN')" />
 		
 		<!-- Vistas JSP Crear y Actualizar -->
 		<intercept-url pattern="/aseform*" access="hasRole('ROLE_EMPLEADO')" />
@@ -55,6 +54,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/editpag/*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/editemp/*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/editvisita/*" access="hasRole('ROLE_EMPLEADO')" />
+		
 		
 		<!-- Metodo controlador eliminar -->
 		<intercept-url pattern="/deletease/*" access="hasRole('ROLE_EMPLEADO')" />

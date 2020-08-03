@@ -17,7 +17,7 @@
 		<div class="container">
 			<form action="reportecli" class="form-inline md-form mr-auto mb-4">
 				<input class="form-control mr-sm-2" type="number" placeholder="Buscar por ID Cliente" id="idvisita" name="idvisita"/>
-				<input class="btn btn-success mb-1" type="submit" id="Buscar"/>
+				<input class="btn btn-success mb-1" type="submit" value="Buscar"/>
 			</form>
 		</div>
     <div class="container">
