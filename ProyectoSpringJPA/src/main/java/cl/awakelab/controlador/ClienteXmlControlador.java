@@ -20,7 +20,7 @@ public class ClienteXmlControlador {
 	@Autowired
 	IClienteServicio cs;
 
-	@RequestMapping(value = "/clilistxml", method = RequestMethod.GET,  produces="application/json; charset=ISO-8859-1")
+	@RequestMapping(value = "/clilistxml", method = RequestMethod.GET)
 	public ClienteXmlLista getClientes() {
 		ClienteXmlLista clientesxml = new ClienteXmlLista();
 		List<Cliente> listacli = cs.getAllClientes();

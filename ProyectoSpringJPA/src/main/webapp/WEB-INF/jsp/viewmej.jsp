@@ -62,7 +62,7 @@
 	</tbody>
 </table>
 <br/>
-<sec:authorize access="hasRole('ROLE_EMPLEADO')">
+<sec:authorize access="hasRole('ROLE_EMPLEADO')">	
 	<a class="btn btn-success mb-1" title="Agregar nueva mejora" href="mejform">Agregar Mejora</a>&nbsp;&nbsp;
 </sec:authorize>				
 	<a class="btn btn-secondary mb-1" title="Volver al inicio" href="main">Volver al inicio</a>

@@ -40,7 +40,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/capform*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/chequeoform*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/cliform*" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/mejform*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/mejform*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/pagform*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/empform*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/visitaform*" access="hasRole('ROLE_EMPLEADO')" />

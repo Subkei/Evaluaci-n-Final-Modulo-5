@@ -69,7 +69,9 @@
 	</tbody>
 </table>
 <br/>
+	<sec:authorize access="hasRole('ROLE_ADMIN')">
 	<a class="btn btn-success mb-1" title="Agregar nuevo cliente" href="cliform">Agregar nuevo Cliente</a>&nbsp;&nbsp;
+	</sec:authorize>
 	<a class="btn btn-secondary mb-1" title="Volver al inicio" href="main">Volver al inicio</a>
 
 </body>

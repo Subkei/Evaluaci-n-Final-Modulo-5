@@ -28,16 +28,16 @@
       <form:errors path = "*" cssClass = "errorblock" element="div" />
       <div class="container">
           <div class="row">
-             <label class="col-4 lead font-weight-normal">Fecha:</label>
+             <form:label path="fecha" class="col-4 lead font-weight-normal">Fecha:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "fecha" cssClass = "error" />
               </div>              
-              <form:input type="date" class="col-6 input-group" path="fecha"/>
+              <form:input class="col-6 input-group" path="fecha"/>
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Hora:</label>
+              <form:label path="hora" class="col-4 lead font-weight-normal">Hora:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "hora" cssClass = "error" />
@@ -46,16 +46,16 @@
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Numero asistentes:</label>
+              <form:label path="numasistentes" class="col-4 lead font-weight-normal">Numero asistentes:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "numasistentes" cssClass = "error" />
               </div>
-              <form:input type="number" class="col-6 input-group" path="numasistentes"/>
+              <form:input class="col-6 input-group" path="numasistentes"/>
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">ID Visitas:</label>
+              <form:label path="visitas_idvisita" class="col-4 lead font-weight-normal">ID Visitas:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "visitas_idvisita" cssClass = "error" />

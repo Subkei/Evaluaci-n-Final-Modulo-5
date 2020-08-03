@@ -27,10 +27,24 @@ public class Accidentes {
 	@NotNull
 	private int cliente_id;
 	
+	@ManyToOne
+	@JoinColumn(name="cliente_id", insertable = false, updatable = false)
+	Cliente cliente;
+	
 	public Accidentes() {
 		super();
 	}
 
+	public Accidentes(int idaccidente, String fecha, String hora, String suceso, String lugar, Cliente cliente) {
+		super();
+		this.idaccidente = idaccidente;
+		this.fecha = fecha;
+		this.hora = hora;
+		this.suceso = suceso;
+		this.lugar = lugar;
+		this.cliente = cliente;
+	}	
+		
 	public Accidentes(int idaccidente, String fecha, String hora, String suceso, String lugar, int cliente_id) {
 		super();
 		this.idaccidente = idaccidente;
@@ -89,6 +103,14 @@ public class Accidentes {
 		this.cliente_id = cliente_id;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
 	@Override
 	public String toString() {
 		return "Accidentes [idaccidente=" + idaccidente + ", fecha=" + fecha + ", hora=" + hora + ", suceso=" + suceso

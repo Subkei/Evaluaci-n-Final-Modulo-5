@@ -28,6 +28,7 @@
               <li>Suceso: ${accidenteData.getSuceso()}</li>
               <li>Lugar: ${accidenteData.getLugar()}</li>
               <li>Id Cliente: ${accidenteData.getCliente_id()}</li>
+              <li>Nombre Cliente: ${accidenteData.cliente.nombre}</li>
             </ul>
             <a type="button" class="btn btn-lg btn-primary" href="/ProyectoSpringJPA/viewacc">Volver al Listado</a>
           </div>

@@ -17,12 +17,12 @@
     <link href="${estilosCSS}" rel="stylesheet" />
     <script src="${jqueryJS}"></script>
    
-    <title>Crear Asesoria </title>
+    <title>Ingresar Asesoria </title>
   </head>
   <body>
     <div class="jumbotron">
         <header class="text-center">
-            <h2>Solicitar Asesoria </h2>
+            <h2>Ingresar Asesoria </h2>
         </header>
     </div> 
     
@@ -72,7 +72,10 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input type="text" path="especial" class="col-6 input-group" min="5" max="5" placeholder="Debes ingresar si o no"/>
+              <form:select path="especial" class="col-6 input-group">
+	           <form:option value="si" label="si"/>
+              	<form:option value="no" label="no"/>
+              </form:select>
               <form:errors path="especial" cssClass = "error" />
           </div>
           <br><br>      

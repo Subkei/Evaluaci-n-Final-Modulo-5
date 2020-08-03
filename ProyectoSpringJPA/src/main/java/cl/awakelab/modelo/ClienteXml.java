@@ -1,17 +1,31 @@
 package cl.awakelab.modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlAccessorType(value = XmlAccessType.FIELD)
 @XmlRootElement(name="cliente")
+@Entity
 public class ClienteXml {
 
-	
+	@Id
+	@GeneratedValue
+	@XmlElement
 	private int id;
+	@XmlElement
 	private String nombre;
+	@XmlElement
 	private int telefono;
+	@XmlElement
 	private String correoelectronico;
+	@XmlElement
 	private String rubro;
+	@XmlElement
 	private String direccion;
 	
 	
@@ -30,7 +44,7 @@ public class ClienteXml {
 		this.direccion = direccion;
 	}
 
-	@XmlElement
+
 	public int getId() {
 		return id;
 	}
@@ -40,7 +54,7 @@ public class ClienteXml {
 		this.id = id;
 	}
 
-	@XmlElement
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -50,7 +64,7 @@ public class ClienteXml {
 		this.nombre = nombre;
 	}
 
-	@XmlElement
+
 	public int getTelefono() {
 		return telefono;
 	}
@@ -60,7 +74,7 @@ public class ClienteXml {
 		this.telefono = telefono;
 	}
 
-	@XmlElement
+
 	public String getCorreoelectronico() {
 		return correoelectronico;
 	}
@@ -70,7 +84,7 @@ public class ClienteXml {
 		this.correoelectronico = correoelectronico;
 	}
 
-	@XmlElement
+
 	public String getRubro() {
 		return rubro;
 	}
@@ -80,7 +94,7 @@ public class ClienteXml {
 		this.rubro = rubro;
 	}
 
-	@XmlElement
+
 	public String getDireccion() {
 		return direccion;
 	}

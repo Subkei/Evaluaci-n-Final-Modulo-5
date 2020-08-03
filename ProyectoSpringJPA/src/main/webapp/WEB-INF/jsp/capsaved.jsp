@@ -25,7 +25,7 @@
 	            <li>Fecha: ${fecha}</li>
 	            <li>Hora: ${hora}</li>
 	            <li>Numero Asistentes: ${numasistentes}</li>
-	            <li>ID Visitas: ${visitas_idvisitas}</li>
+	            <li>ID Visitas: ${visitas_idvisita}</li>
             </ul>
             <a type="button" class="btn btn-lg btn-primary" href="viewcap">Volver</a>
           </div>

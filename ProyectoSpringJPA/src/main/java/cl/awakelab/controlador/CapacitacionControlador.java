@@ -48,7 +48,7 @@ public class CapacitacionControlador {
     		m.addAttribute("fecha", capacitacion.getFecha());
     		m.addAttribute("hora", capacitacion.getHora());
     		m.addAttribute("numasistentes", capacitacion.getNumasistentes());
-    		m.addAttribute("idvisita", capacitacion.getVisitas_idvisita());
+    		m.addAttribute("visitas_idvisita", capacitacion.getVisitas_idvisita());
     	}
         log.info("Capacitacion creada: " + capacitacion.toString());
         return "capsaved";
@@ -91,7 +91,7 @@ public class CapacitacionControlador {
    		m.addAttribute("fecha", capacitacion.getFecha());
    		m.addAttribute("hora", capacitacion.getHora());
    		m.addAttribute("numasistentes", capacitacion.getNumasistentes());
-   		m.addAttribute("idvisita", capacitacion.getVisitas_idvisita());
+   		m.addAttribute("visitas_idvisita", capacitacion.getVisitas_idvisita());
        }
         log.info("Procesando edición de clientes");
         return "capsaved";

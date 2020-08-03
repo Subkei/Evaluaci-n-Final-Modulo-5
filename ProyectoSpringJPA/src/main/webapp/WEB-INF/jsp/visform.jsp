@@ -82,7 +82,7 @@
           </div>
           <br><br>          
           <div class="row">
-              <form:label path="empleado_idempleado" class="col-4 lead font-weight-normal">Empleado Id:</form:label>
+              <form:label path="empleado_idempleado" class="col-4 lead font-weight-normal">ID Empleado:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "empleado_idempleado" cssClass = "error" />

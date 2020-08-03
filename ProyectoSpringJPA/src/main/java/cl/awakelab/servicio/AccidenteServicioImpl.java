@@ -49,4 +49,8 @@ public class AccidenteServicioImpl implements IAccidenteServicio {
 		return null;
 	}
 
+	@Override
+	public List<Accidentes> listarAccidenteParaCalculo(int cal) {
+		return reAcc.findAllByCliente_id(cal);
+	}	
 }

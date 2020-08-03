@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Insert title here</title>
+		<title>Ver Posts</title>
 	</head>
 	<body>
 		<h1>Detalle de post</h1>
@@ -13,6 +13,7 @@
 		Usuario ID: <c:out value="${ps.getUserId()}"></c:out><br/>
 		Titulo: <c:out value="${ps.getTitle()}"></c:out><br/>
 		Cuerpo: <c:out value="${ps.getBody()}"></c:out><br/>
-	
+		<br><br>
+		<a class="btn btn-secondary mb-1" title="Volver al inicio" href="/ProyectoSpringJPA/listadoposts">Volver al inicio</a>	
 	</body>
 </html>

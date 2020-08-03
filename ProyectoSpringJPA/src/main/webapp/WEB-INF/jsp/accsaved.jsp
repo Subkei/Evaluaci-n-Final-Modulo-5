@@ -25,8 +25,8 @@
 	            <li>Fecha: ${fecha}</li>
 	            <li>Hora: ${hora}</li>
 	            <li>Suceso: ${suceso}</li>
-	            <li>Lugar: ${Suceso}</li>
-	            <li>Lugar: ${cliente_id}</li>
+	            <li>Lugar: ${lugar}</li>
+	            <li>ID Cliente: ${cliente_id}</li>
             </ul>
             <a type="button" class="btn btn-lg btn-primary" href="viewacc">Volver</a>
           </div>

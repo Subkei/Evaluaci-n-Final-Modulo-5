@@ -60,11 +60,11 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input class="col-6 input-group" path="estado"/>
-<%--            <form:option value="yes" label="realizado"/>
+              <form:select class="col-6 input-group" path="estado">
+           <form:option value="yes" label="realizado"/>
               	<form:option value="casi" label="en proceso"/>
               	<form:option value="no" label="no realizado"/>
-              </form:select> --%>
+              </form:select>
           </div>
           <br><br>
           <div class="row">
@@ -74,10 +74,6 @@
               	<form:errors path = "cliente_id" cssClass = "error" />
               </div>
               <form:input class="col-6 input-group" path="cliente_id"/>
-              <!--<form:select path="cliente_id">
-    			<form:option value="-" label="--Seleccione un cliente--"/>
-    			<form:options items="${listcli}" />
-			  </form:select>-->
           </div>
           <br><br><br>
            <div class="row">

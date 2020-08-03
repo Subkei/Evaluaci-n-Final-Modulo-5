@@ -54,7 +54,6 @@ public class AccidenteControlador {
         return "accsaved";
     }
     
-    
     //mostrar listado Accidentes
     @RequestMapping("/viewacc")    
     public String getAccidenteList(Model m){    
@@ -63,8 +62,7 @@ public class AccidenteControlador {
         log.info("Listado de accidentes");
         return "viewacc";
     }
-    
-  
+      
     //busqueda por ID de accidente
     @GetMapping(value="/accidente/{idaccidente}")
     public String Accidente(Model m, @PathVariable int idaccidente) {
@@ -73,7 +71,13 @@ public class AccidenteControlador {
     	return "accdetalle";
     }
     
- 
+	@RequestMapping("/calacc/{cliente_id}")
+	public String getAccidenteList(Model m, @PathVariable("cliente_id") int cliente_id) {
+		List<Accidentes> contaracc = servicioAcc.listarAccidenteParaCalculo(cliente_id);
+		m.addAttribute("contaracc", contaracc.size());
+		return "calacc";
+	}
+	
     //formulario actualizar Accidente
     @RequestMapping(value="/editacc/{idaccidente}")    
     public String updateAccidente(Model m, @PathVariable int idaccidente){    

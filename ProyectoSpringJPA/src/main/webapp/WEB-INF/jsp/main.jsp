@@ -91,6 +91,8 @@
 	<a href="viewmej" class="list-group-item text-white list-group-item-action list-group-item-dark">Reportes de Actividades de Mejoras</a>
 	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-light">Reportes de Accidentabilidad por Cliente</a>
 	<a href="reporteclibuscar" class="list-group-item text-white list-group-item-action list-group-item-dark">Reportes por Cliente</a>
+	<a href="listadoposts" class="list-group-item text-white list-group-item-action list-group-item-dark">Desplegar JSON Externo</a>
+	<a href="clilistxml" class="list-group-item text-white list-group-item-action list-group-item-dark">Desplegar XML Interno</a>
 	</div>
 </div>
 </sec:authorize>

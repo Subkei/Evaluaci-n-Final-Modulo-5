@@ -72,8 +72,11 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input type="text" path="especial" class="col-6 input-group" min="5" max="5" placeholder="Debes ingresar si o no"/>
-              <form:errors path="especial" cssClass = "error" />
+              <form:select path="especial" class="col-6 input-group">
+	           <form:option value="si" label="si"/>
+              	<form:option value="no" label="no"/>
+              </form:select>
+              <form:errors path="especial" cssClass = "error"/>
           </div>
           <br><br>      
     	<div class="row">

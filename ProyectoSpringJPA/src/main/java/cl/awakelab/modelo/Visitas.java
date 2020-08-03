@@ -24,9 +24,9 @@ public class Visitas {
 	private String resumen;
 	
 	private String observaciones;
-	@NotEmpty
+
 	private int cliente_id;
-	@NotEmpty
+
 	private int empleado_idempleado;
 	
 	@ManyToOne

@@ -14,5 +14,5 @@ public interface IAccidenteServicio {
 	 void updateAccidente(Accidentes uaccidente, int idaccidente);
 	 void deleteAccidente(int idaccidente);
 	 List<Accidentes> getAccidenteByFecha(String accidenteFecha);
-
+	 List<Accidentes> listarAccidenteParaCalculo(int cal);
 }

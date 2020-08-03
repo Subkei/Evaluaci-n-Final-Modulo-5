@@ -16,9 +16,9 @@ public class Capacitacion {
 	 private String fecha;
 	 @NotEmpty
 	 private String hora;
-	 @NotEmpty
+
 	 private int numasistentes;
-	 @NotEmpty
+
 	 private int visitas_idvisita;
 	
 	 public Capacitacion() {

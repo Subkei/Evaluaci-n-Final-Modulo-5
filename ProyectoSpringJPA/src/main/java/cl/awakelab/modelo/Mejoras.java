@@ -1,8 +1,6 @@
 package cl.awakelab.modelo;
 
 import javax.persistence.*;
-//import javax.validation.constraints.Pattern;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -12,7 +10,7 @@ public class Mejoras {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEJ_SEQ")
-    @SequenceGenerator(sequenceName = "mejora_seq", allocationSize = 1, name = "MEJ_SEQ")
+    @SequenceGenerator(sequenceName = "mejoras_seq", allocationSize = 1, name = "MEJ_SEQ")
 
 	@Column(name="idmejora")
 	private int idmejora;
@@ -22,9 +20,9 @@ public class Mejoras {
 	private String motivo;
 	@NotEmpty
 	private String actividades;
-	//@Pattern(solo letras)
+
 	private String estado;
-	@NotNull
+
 	private int cliente_id;
 
 	public Mejoras() {

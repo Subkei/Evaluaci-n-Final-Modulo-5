@@ -4,16 +4,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Pago ok</title>
+<title>Proceso Exitoso</title>
     <!-- Bootstrap CSS-->
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
     
     <link href="${bootstrapCSS}" rel="stylesheet" />
 </head>
 <body>
+<h2>Proceso Exitoso</h2>
 <div class="pt-md-5 pb-md-4 mx-auto">
     </div>
-
     <div class="container">
       <div class="card-deck mb-3">
         <div class="card mb-4 box-shadow">

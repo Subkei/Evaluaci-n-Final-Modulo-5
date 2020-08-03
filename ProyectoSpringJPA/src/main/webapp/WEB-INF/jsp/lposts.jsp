@@ -22,9 +22,9 @@
 	<td><a href="detallepost/${ps.getId()}">Ver detalle</a></td>
 </tr>
 </c:forEach>
-
 </table>
-
+<br><br>
+<a class="btn btn-secondary mb-1" title="Volver al inicio" href="/ProyectoSpringJPA/main">Volver al inicio</a>
 
 </body>
 </html>

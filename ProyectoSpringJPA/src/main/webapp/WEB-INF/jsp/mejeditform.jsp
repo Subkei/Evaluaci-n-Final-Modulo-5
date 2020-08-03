@@ -17,12 +17,12 @@
     <link href="${estilosCSS}" rel="stylesheet" />
     <script src="${jqueryJS}"></script>
    
-    <title>Agregar Act. Mejora</title>
+    <title>Agregar Actividades de Mejora</title>
   </head>
   <body>
     <div class="jumbotron">
         <header class="text-center">
-            <h2>Agregar Act de Mejora</h2>
+            <h2>AgregarActividades de Mejora</h2>
         </header>
     </div> 
      <form:form method="post" action="/ProyectoSpringJPA/mejeditsave" modelAttribute="mejora">
@@ -34,7 +34,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "fecha" cssClass = "error" />
               </div>
-              <form:input type="date" class="col-6 input-group" path="fecha"/>
+              <form:input class="col-6 input-group" path="fecha"/>
           </div>
           <br><br>
           <div class="row">
@@ -75,18 +75,14 @@
               	<form:errors path = "cliente_id" cssClass = "error" />
               </div>
               <form:input class="col-6 input-group" path="cliente_id"/>
-              <!--<form:select path="cliente_id">
-    			<form:option value="-" label="--Seleccione un cliente--"/>
-    			<form:options items="${listcli}" />
-			  </form:select>-->
           </div>
           <br><br><br>
            <div class="row">
                <div class="container" style="max-width:55%">
-               <input type="submit" class="btn btn-warning col-4" value="Volver" name="viewmej"/>
+               <a class="btn btn-warning col-4" href="/ProyectoSpringJPA/viewmej" role="button">Volver</a>
                 <form:hidden path="idmejora"/>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-               <input type="submit" class="btn btn-warning col-4" value="Editar Act. Mejora">
+               <input type="submit" class="btn btn-warning col-4" value="Editar Act. Mejoras">
                </div>
            </div>          
         </div>

@@ -39,21 +39,21 @@ public class MejorasControlador {
 	
 	//guardar formulario de mejoras
 	@PostMapping("/mejsave")
-	public String addMejoraSave(@ModelAttribute("mejora") @Validated Mejoras mejora, BindingResult result, Model m) {
+	public String addMejoraSave(@ModelAttribute("mejoras") @Validated Mejoras mejoras, BindingResult result, Model m) {
 		if(result.hasErrors()) {
 			return "mejform";
 		}
 		else {
-			servicioMej.addMejora(mejora);
-			String mensaje = "La Act. de Mejora "+ mejora.getIdmejora() + " ha sido creada con éxito.";
+			servicioMej.addMejora(mejoras);
+			String mensaje = "La Acttividad de Mejora "+ mejoras.getIdmejora() + " ha sido creada con éxito.";
 			m.addAttribute("mensaje", mensaje);
-			m.addAttribute("fecha", mejora.getFecha());
-			m.addAttribute("motivo", mejora.getMotivo());
-			m.addAttribute("actividades", mejora.getActividades());
-			m.addAttribute("estado", mejora.getEstado());
-			m.addAttribute("cliente_id", mejora.getCliente_id());
+			m.addAttribute("fecha", mejoras.getFecha());
+			m.addAttribute("motivo", mejoras.getMotivo());
+			m.addAttribute("actividades", mejoras.getActividades());
+			m.addAttribute("estado", mejoras.getEstado());
+			m.addAttribute("cliente_id", mejoras.getCliente_id());
 		}
-		log.info("Act. de mejora creada: " + mejora.toString());
+		log.info("Act. de mejora creada: " + mejoras.toString());
 		return "mejsaved";
 	}
 	
@@ -83,20 +83,20 @@ public class MejorasControlador {
     }
     //guardar formulario actualizar mejora
     @RequestMapping("/mejeditsave")    
-    public String updateMejoraSave(@ModelAttribute("mejora") @Validated Mejoras mejora, BindingResult result, Model m){
+    public String updateMejoraSave(@ModelAttribute("mejora") @Validated Mejoras mejoras, BindingResult result, Model m){
        
     	if(result.hasErrors()) {
     	   return "mejeditform";
        }
        else {
-    	   servicioMej.updateMejora(mejora);
-    	   String mensaje = "La Act. de Mejora "+ mejora.getIdmejora() + " ha sido actualizada con éxito.";
+    	   servicioMej.updateMejora(mejoras);
+    	   String mensaje = "La Actividad de Mejora "+ mejoras.getIdmejora() + " ha sido actualizada con éxito.";
     	   m.addAttribute("mensaje", mensaje);
-    	   m.addAttribute("fecha", mejora.getFecha());
-    	   m.addAttribute("motivo", mejora.getMotivo());
-    	   m.addAttribute("actividades", mejora.getActividades());
-    	   m.addAttribute("estado", mejora.getActividades());
-    	   m.addAttribute("cliente_id", mejora.getCliente_id());
+    	   m.addAttribute("fecha", mejoras.getFecha());
+    	   m.addAttribute("motivo", mejoras.getMotivo());
+    	   m.addAttribute("actividades", mejoras.getActividades());
+    	   m.addAttribute("estado", mejoras.getActividades());
+    	   m.addAttribute("cliente_id", mejoras.getCliente_id());
        }
     	log.info("Procesando edición de mejoras");
         return "mejsaved";

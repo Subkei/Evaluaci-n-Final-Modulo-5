@@ -9,5 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface IAccidenteRepositorio extends CrudRepository <Accidentes,Integer>{
 	
 	List<Accidentes> findByfecha(String fecha);
+	List<Accidentes> findAllByCliente_id(int cliente_id);
 
 }

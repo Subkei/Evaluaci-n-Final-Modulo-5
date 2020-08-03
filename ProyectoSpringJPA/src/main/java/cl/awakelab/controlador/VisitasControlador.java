@@ -48,7 +48,7 @@ public class VisitasControlador {
     		m.addAttribute("resumen", visitas.getResumen());
     		m.addAttribute("observaciones", visitas.getObservaciones());
     		m.addAttribute("cliente_id", visitas.getCliente_id());
-    		m.addAttribute("empleado_id", visitas.getEmpleado_idempleado());
+    		m.addAttribute("empleado_idempleado", visitas.getEmpleado_idempleado());
     	}
         log.info("Visitas creada: " + visitas.toString());
         return "vissaved";

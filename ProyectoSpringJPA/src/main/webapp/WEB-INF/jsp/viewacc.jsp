@@ -38,6 +38,7 @@
 		<th>Suceso</th>
 		<th>Lugar</th>
 		<th>Cliente id</th>
+		<th>Cliente Nombre</th>		
 		<th>Acciones</th>
 	</tr>
 	</thead>
@@ -50,12 +51,14 @@
 				<td>${acc.getSuceso()}</td>
 				<td>${acc.getLugar()}</td>
 				<td>${acc.getCliente_id()}</td>
+				<td>${acc.cliente.nombre}</td>				
 				<td>
 				<sec:authorize access="hasRole('ROLE_EMPLEADO')">
 					<a class="btn btn-danger mb-1" title="Eliminar accidente" href="deleteacc/${acc.getIdaccidente()}">Eliminar</a>&nbsp;
 					<a class="btn btn-warning mb-1" title="Editar accidente" href="editacc/${acc.getIdaccidente()}">Editar</a>&nbsp;
 				</sec:authorize>					
 					<a class="btn btn-info mb-1" title="Detalle accidente" href="accidente/${acc.getIdaccidente()}">Detalle</a>&nbsp;
+					<a class="btn btn-primary mb-1" title="Detalle Accidentabilidad" href="calacc/${acc.getIdaccidente()}"> Accidentabilidad </a>					
 				</td>
 			</tr>
 		</c:forEach>

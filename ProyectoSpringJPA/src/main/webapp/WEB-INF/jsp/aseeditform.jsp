@@ -68,7 +68,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "fecha" cssClass = "error" />
               </div>
-              <form:input type="date" class="col-6 input-group" path="fecha"/>
+              <form:input class="col-6 input-group" path="fecha"/>
           </div>
           <br><br>
           

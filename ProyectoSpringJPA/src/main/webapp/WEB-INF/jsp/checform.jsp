@@ -29,15 +29,6 @@
      <form:errors path = "*" cssClass = "errorblock" element = "div" /> 
       <div class="container">
           <div class="row">
-              <form:label path="idchequeo" class="col-4 lead font-weight-normal">ID Chequeo:</form:label>
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><b>></b></span>
-                <form:errors path = "idchequeo" cssClass = "error" />
-              </div>
-              <form:input class="col-6 input-group" path="idchequeo" placeholder="Ingresa id de chequeo"/>
-          </div>
-          <br><br>
-          <div class="row">
               <form:label path="detalle" class="col-4 lead font-weight-normal">Detalle:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
@@ -58,7 +49,7 @@
               <form:label path="visitas_idvisita" class="col-4 lead font-weight-normal">Visita ID:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-                <form:errors path = "visitas_idvisita" cssClass = "error" />
+                <form:errors path="visitas_idvisita" cssClass = "error" />
               </div>
               <form:input class="col-6 input-group" path="visitas_idvisita" placeholder="Ingresar ID Visitas"/>
           </div>

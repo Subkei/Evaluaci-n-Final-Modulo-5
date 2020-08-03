@@ -24,7 +24,7 @@
             <ul class="list-unstyled mt-3 mb-4">
 	            <li>Detalle: ${detalle}</li>
 	            <li>Estado: ${estado}</li>
-	            <li>ID Visitas: ${visitas_idvisitas}</li>
+	            <li>ID Visitas: ${visitas_idvisita}</li>
             </ul>
             <a type="button" class="btn btn-lg btn-primary" href="viewchec">Volver</a>
           </div>
