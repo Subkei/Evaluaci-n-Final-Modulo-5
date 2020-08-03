@@ -24,7 +24,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/viewase*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/viewacc*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/viewcap*" access="hasRole('ROLE_EMPLEADO')" />
-		<intercept-url pattern="/viewchequeo*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/viewchec*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/viewcli*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/viewmej*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/viewemp*" access="hasRole('ROLE_ADMIN')" />
@@ -32,13 +32,24 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/viewvisita*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/listadosposts*" access="hasRole('ROLE_ADMIN')"/>		
 		<intercept-url pattern="/reportecli**" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/verposts*" access="hasRole('ROLE_ADMIN')" />		
+		<intercept-url pattern="/verposts*" access="hasRole('ROLE_ADMIN')" />
+		
+		<!-- Vistas Guardar JSP -->
+		<intercept-url pattern="/accsave**" access="hasRole('ROLE_EMPLEADO')" />				
+		<intercept-url pattern="/asesave**" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/capsave*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/accsave**" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/checsave**" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/clisave**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/empsave**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/mejsave**" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/pagsave**" access="hasRole('ROLE_ADMIN')" />
 		
 		<!-- Vistas JSP Crear y Actualizar -->
 		<intercept-url pattern="/aseform*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/accform*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/capform*" access="hasRole('ROLE_EMPLEADO')" />
-		<intercept-url pattern="/chequeoform*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/checform*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/cliform*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/mejform*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/pagform*" access="hasRole('ROLE_ADMIN')" />
@@ -49,7 +60,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/editase/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/editacc/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/editcap/*" access="hasRole('ROLE_EMPLEADO')" />
-		<intercept-url pattern="/editchequeo/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/editchec/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/editcli/*" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/editmej/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/editpag/*" access="hasRole('ROLE_ADMIN')" />
@@ -61,7 +72,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/deletease/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/deleteacc/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/deletecap/*" access="hasRole('ROLE_EMPLEADO')" />
-		<intercept-url pattern="/deletechequeo/*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/deletechec/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/deletecli/*" access="hasRole('ROLE_ADMIN')" />		
 		<intercept-url pattern="/deletemej/*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/deletepag/*" access="hasRole('ROLE_ADMIN')" />
@@ -72,7 +83,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/accdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/asedetalle*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/capdetalle*" access="hasRole('ROLE_EMPLEADO')" />
-		<intercept-url pattern="/chequeodetalle*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/checdetalle*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/clidetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/empdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/mejdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />

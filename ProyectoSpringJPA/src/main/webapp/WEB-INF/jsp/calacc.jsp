@@ -33,12 +33,14 @@
 		<thead>
 			<tr>
 				<th>Accidentabilidad</th>
+				<th>Fórmula</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<tr>
 				<td><c:out value="${(contaracc*100)/180}"></c:out></td>
+				<td>Accidentes = N x 100/180</td>
 			</tr>
 		</tbody>
 	</table>
