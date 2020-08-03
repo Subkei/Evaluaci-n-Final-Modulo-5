@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import cl.awakelab.modelo.Visitas;
 import cl.awakelab.servicio.IVisitasServicio;
 
@@ -21,13 +23,6 @@ public class VisitasControlador {
 	IVisitasServicio servicioVis;
 
 	static Logger log = Logger.getLogger(VisitasControlador.class.getName());
-/*	
-	@RequestMapping("/")
-	public String index() {
-		//m.addAttribute("mensaje", "Bienvenido usuario");
-		return "index";
-		}
-*/	
 	
 	//vista formulario cliente
     @RequestMapping("/visform")    
@@ -67,11 +62,28 @@ public class VisitasControlador {
         return "viewvis";
     }
     //busqueda por ID de Visitas (detalle)
-    @GetMapping(value="/visitas/idvisita")
+    @GetMapping(value="/visitas/{idvisita}")
     public String Visitas(Model m, @PathVariable int idvisita) {
     	Visitas vis = servicioVis.getVisitasById(idvisita);
     	m.addAttribute("visData",vis);
+    	log.info("Detalle ID cliente");
     	return "visdetalle";
+    }
+    //Vista Reporte por ID de Cliente-Visitas
+    @RequestMapping("/reporteclibuscar")
+    public String reporteclibuscar(Model m) {
+    List <Visitas> listbuscarcli = servicioVis.getAllVisitas();
+	     m.addAttribute("listabuscarcli", listbuscarcli);
+	     log.info("Vista de reporte por ID de Cliente-Visitas");
+	     return "reportecli";
+    }        
+    //Reporte por ID de Cliente-Visitas
+    @GetMapping(value="/reportecli")
+    public String reporteCliente(Model m, @RequestParam("idvisita") int idvisita) {
+    	Visitas vis = servicioVis.getVisitasById(idvisita);
+    	m.addAttribute("visitaData",vis);
+    	log.info("Reporte por ID de Cliente-Visitas");
+    	return "reportecli";
     }
     //formulario actualizar Visitas
     @RequestMapping(value="/editvis/{idvisita}")    

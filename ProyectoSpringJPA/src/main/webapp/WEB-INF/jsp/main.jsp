@@ -89,9 +89,8 @@
 	<br><h3 class="text-white font-weight-light">Reportes</h3>
 	
 	<a href="viewmej" class="list-group-item text-white list-group-item-action list-group-item-dark">Reportes de Actividades de Mejoras</a>
-	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-light">Reportes de Accidentabilidad por Cliente*</a>
-	<a href="#" class="list-group-item text-white list-group-item-action list-group-item-dark">Reportes por Cliente*</a>
-	<a href="#" class="list-group-item list-group-item-action list-group-item-light">Reportes Globales*</a>
+	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-light">Reportes de Accidentabilidad por Cliente</a>
+	<a href="reportecli" class="list-group-item text-white list-group-item-action list-group-item-dark">Reportes por Cliente</a>
 	</div>
 </div>
 </sec:authorize>

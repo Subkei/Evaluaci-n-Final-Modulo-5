@@ -29,10 +29,31 @@ public class Visitas {
 	@NotEmpty
 	private int empleado_idempleado;
 	
+	@ManyToOne
+	@JoinColumn(name="cliente_id", insertable = false, updatable = false)
+	Cliente cliente;
+	
+	@ManyToOne
+	@JoinColumn(name="empleado_idempleado", insertable = false, updatable = false)
+	Empleado empleado;
+	
 	public Visitas() {
 		super();
 	}
-	
+
+	public Visitas(int idvisita, String direccion, String ciudad, String fecha, String resumen, String observaciones,
+			Cliente cliente, Empleado empleado) {
+		super();
+		this.idvisita = idvisita;
+		this.direccion = direccion;
+		this.ciudad = ciudad;
+		this.fecha = fecha;
+		this.resumen = resumen;
+		this.observaciones = observaciones;
+		this.cliente = cliente;
+		this.empleado = empleado;
+	}
+
 	public Visitas(int idvisita, String direccion, String ciudad, String fecha, String resumen, String observaciones,
 			int cliente_id, int empleado_idempleado) {
 		super();
@@ -110,11 +131,28 @@ public class Visitas {
 		this.empleado_idempleado = empleado_idempleado;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Empleado getEmpleado() {
+		return empleado;
+	}
+
+	public void setEmpleado(Empleado empleado) {
+		this.empleado = empleado;
+	}
+
 	@Override
 	public String toString() {
 		return "Visitas [idvisita=" + idvisita + ", direccion=" + direccion + ", ciudad=" + ciudad + ", fecha=" + fecha
-				+ ", resumen=" + resumen + ", observaciones=" + observaciones + ", cliente_id=" + cliente_id
-				+ ", empleado_idempleado=" + empleado_idempleado + "]";
+				+ ", resumen=" + resumen + ", observaciones=" + observaciones + ", cliente=" + cliente
+				+ ", empleado=" + empleado + "]";
 	}
 	
 }

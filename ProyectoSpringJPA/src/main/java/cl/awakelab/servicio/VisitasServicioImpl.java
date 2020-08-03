@@ -3,7 +3,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import cl.awakelab.modelo.ICapacitacionRepositorio;
 import cl.awakelab.modelo.IVisitasRepositorio;
 import cl.awakelab.modelo.Visitas;
 
@@ -13,6 +13,8 @@ public class VisitasServicioImpl implements IVisitasServicio {
 
 	@Autowired
 	IVisitasRepositorio daoVis;
+	@Autowired
+	ICapacitacionRepositorio daoCap;
 	
 	@Override
 	public List<Visitas> getAllVisitas() {
@@ -48,5 +50,4 @@ public class VisitasServicioImpl implements IVisitasServicio {
 		//daoVis.findBynombre(visitasdireccion);
 		return null;
 	}
-
 }

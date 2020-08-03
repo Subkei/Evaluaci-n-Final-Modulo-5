@@ -9,5 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IVisitasRepositorio extends CrudRepository<Visitas, Integer> {
 
-	//List<Visitas> findBynombre(String direccion);
 }
