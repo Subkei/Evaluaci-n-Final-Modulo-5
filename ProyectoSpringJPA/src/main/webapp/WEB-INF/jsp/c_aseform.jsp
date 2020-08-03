@@ -27,62 +27,69 @@
     </div> 
     
      <form:form method="post" action="c_savease" modelAttribute="asesoria">
+     <form:errors path = "*" cssClass = "errorblock" element = "div" />       
       <div class="container">          
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Detalle :</label>
+               <form:label path="detalle" class="col-4 lead font-weight-normal">Detalle :</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input  class="col-6 input-group" path="detalle"/>
+              <form:input class="col-6 input-group" path="detalle" placeholder="Describe el detalle"/>
+              <form:errors path="detalle" cssClass = "error" />
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Gestión:</label>
+               <form:label path="gestion" class="col-4 lead font-weight-normal">Gestión:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input  class="col-6 input-group" path="gestion"/>
+              <form:input class="col-6 input-group" path="gestion" placeholder="Describe la gestión"/>
+              <form:errors path="gestion" cssClass = "error" />
           </div>
           <br><br>
           
-          
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Propuestas:</label>
+               <form:label path="propuestas" class="col-4 lead font-weight-normal">Propuestas:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input  class="col-6 input-group" path="propuestas"/>
+              <form:input class="col-6 input-group" path="propuestas" placeholder="Detalla una propuesta"/>
+              <form:errors path="propuestas" cssClass = "error" />
           </div>
-          <br><br>          
+          <br><br>   
+                 
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Fecha:</label>
+               <form:label path="fecha" class="col-4 lead font-weight-normal">Fecha:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input  class="col-6 input-group" path="fecha"/>
+              <form:input type="date" class="col-6 input-group" path="fecha"/>
+              <form:errors path="fecha" cssClass = "error" />
           </div>
           <br><br>         
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Especial:</label>
+               <form:label path="especial" class="col-4 lead font-weight-normal">Especial:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input  class="col-6 input-group" path="especial"/>
+              <form:input type="text" path="especial" class="col-6 input-group" min="5" max="5" placeholder="Debes ingresar si o no"/>
+              <form:errors path="especial" cssClass = "error" />
           </div>
           <br><br>      
     	<div class="row">
-              <label class="col-4 lead font-weight-normal">  Visita Id:</label>
+               <form:label path="visitas_idvisita" class="col-4 lead font-weight-normal">ID Visita</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input  class="col-6 input-group" path="visitas_idvisita"/>
+              <form:input type="number" class="col-6 input-group" path="visitas_idvisita"/>
+              <form:errors path="visitas_idvisita" cssClass = "error" />
           </div>
          
           <br><br><br>
     
           <div class="row">
                <div class="container" style="max-width:55%">
-               <a class="btn btn-warning col-4" href="index.jsp" role="button">Volver</a>
+               <a class="btn btn-warning col-4" href="/ProyectoSpringJPA/main" role="button">Volver</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                <input type="submit" class="btn btn-warning col-4" value="Solicitar Asesoria">
                </div>

@@ -16,7 +16,7 @@
     
     <!-- jQuery, datatable -->
     <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
-    <spring:url value="/resources/js/jquery.dataTables.js" var="datatablesJS"/>
+    <spring:url value="/resources/js/datatables.js" var="datatablesJS"/>
    	<spring:url value="/resources/js/jquery.dataTables.es.js" var="datatablesEsJS"/>
     
     <script src="${jqueryJS}"></script>
@@ -25,8 +25,7 @@
 </head>
 <body style="padding: 10px;">
 
-	<h1>Listado de Chequeos</h1>
-
+	<h1 class="display-4">Listado de Chequeos</h1>
 <table id="tabla" class="table table-striped table-bordered" style="width: 100%; ">
 	<thead>		
 	<tr>
@@ -34,6 +33,7 @@
 		<th>Detalle</th>
 		<th>Estado</th>
 		<th>visitas ID</th>
+		<th>Acciones</th>
 	</tr>
 	</thead>
 	
@@ -43,7 +43,7 @@
 		<td>${ch.getIdchequeo()}</td> 
 		<td>${ch.getDetalle()}</td>
 		<td>${ch.getEstado()}</td>
-		<td>${ch.getIdvisita()}</td>
+		<td>${ch.getVisitas_idvisita()}</td>
 		
 		<td>
 			<a class="btn btn-danger mb-1" title="Eliminar chequeo" href="deletechec/${ch.getIdchequeo()}">Eliminar</a>&nbsp;

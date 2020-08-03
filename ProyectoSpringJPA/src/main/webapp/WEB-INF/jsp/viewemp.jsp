@@ -16,7 +16,7 @@
     
     <!-- jQuery, datatable -->
     <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
-    <spring:url value="/resources/js/jquery.dataTables.js" var="datatablesJS"/>
+    <spring:url value="/resources/js/datatables.js" var="datatablesJS"/>
    	<spring:url value="/resources/js/jquery.dataTables.es.js" var="datatablesEsJS"/>
     
     <script src="${jqueryJS}"></script>
@@ -26,19 +26,13 @@
 </head>
 <body style="padding: 10px;">
 
-	<h1>Listado de Empleados</h1>
-	<c:if test="${ccmensaje != null}">
-		<h3>
-		<c:out value="${ccmensaje}"></c:out>
-		</h3>
-	</c:if>
+	<h1 class="display-4">Listado de Empleados</h1>
 <table id="tabla" class="table table-striped table-bordered" style="width: 100%; ">
 	<thead>		
 	<tr>
 		<th>ID Empleado</th>
 		<th>Nombre</th>
 		<th>Especialidad</th>
-		
 		<th>Acciones</th>
 	</tr>
 	</thead>

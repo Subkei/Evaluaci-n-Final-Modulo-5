@@ -32,6 +32,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/viewvisita*" access="hasRole('ROLE_EMPLEADO')" />
 		<intercept-url pattern="/listadosposts*" access="hasRole('ROLE_ADMIN')"/>		
 		<intercept-url pattern="/reportecli**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/verposts*" access="hasRole('ROLE_ADMIN')" />		
 		
 		<!-- Vistas JSP Crear y Actualizar -->
 		<intercept-url pattern="/aseform*" access="hasRole('ROLE_EMPLEADO')" />
@@ -77,6 +78,9 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/mejdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/pagdetalle*" access="hasAnyRole('ROLE_EMPLEADO', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/visitadetalle*" access="hasRole('ROLE_EMPLEADO')" />
+		<intercept-url pattern="/lposts*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/listadoposts*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/detallepost/*" access="hasRole('ROLE_ADMIN')" />
 		
 		<!-- access denied page -->
 		<access-denied-handler error-page="/403" />

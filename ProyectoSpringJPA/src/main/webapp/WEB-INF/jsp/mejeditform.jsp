@@ -29,7 +29,7 @@
       <form:errors path = "*" cssClass = "errorblock" element="div" />
       <div class="container">
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Fecha:</label>
+              <form:label path="fecha" class="col-4 lead font-weight-normal">Fecha:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "fecha" cssClass = "error" />
@@ -38,7 +38,7 @@
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Motivo:</label>
+              <form:label path="motivo" class="col-4 lead font-weight-normal">Motivo:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "motivo" cssClass = "error" />
@@ -47,16 +47,16 @@
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Actividades:</label>
+              <form:label path="actividades" class="col-4 lead font-weight-normal">Actividades:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "actividades" cssClass = "error" />
+              	<form:errors path="actividades" cssClass = "error" />
               </div>
               <form:textarea class="col-6 input-group" path="actividades" rows="2" cols="20"/>
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Estado:</label>
+              <form:label path="estado" class="col-4 lead font-weight-normal">Estado:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
@@ -69,7 +69,7 @@
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Cliente Asociado:</label>
+              <form:label path="cliente_id" class="col-4 lead font-weight-normal">Cliente Asociado:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "cliente_id" cssClass = "error" />

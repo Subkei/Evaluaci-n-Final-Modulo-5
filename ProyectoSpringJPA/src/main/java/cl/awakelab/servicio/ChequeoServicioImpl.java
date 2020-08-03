@@ -37,13 +37,6 @@ public class ChequeoServicioImpl implements IChequeoServicio {
 	@Override
 	public void deleteChequeo(int idchequeo) {
 		repChec.delete(idchequeo);
-	}
-
-	/*@Override
-	public List<Chequeo> getChequeoByNombre(String chequeoNombre) {
-		repChec.findBynombre(chequeoNombre);
-		return null;
-	}*/
-	
+	}	
 
 }

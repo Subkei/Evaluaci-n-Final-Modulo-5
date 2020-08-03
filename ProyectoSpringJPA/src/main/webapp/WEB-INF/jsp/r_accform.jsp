@@ -28,56 +28,62 @@
     </div> 
     
      <form:form method="post" action="r_saveacc" modelAttribute="accidente">
+     <form:errors path = "*" cssClass = "errorblock" element = "div" />      
       <div class="container">
    
    <div class="row">
-              <label class="col-4 lead font-weight-normal">  Fecha :</label>
+               <form:label path="fecha" class="col-4 lead font-weight-normal">Fecha:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path = "fecha" cssClass = "error" />                
               </div>
-              <form:input  class="col-6 input-group" path="fecha"/>
+              <form:input type="date" class="col-6 input-group" path="fecha"/>
           </div>
           <br><br>
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Hora:</label>
+               <form:label path="hora" class="col-4 lead font-weight-normal">Hora:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path = "hora" cssClass = "error" />                
               </div>
-              <form:input  class="col-6 input-group" path="hora"/>
+              <form:input type="time" class="col-6 input-group" path="hora"/>
           </div>
           <br><br>
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Suceso:</label>
+               <form:label path="suceso" class="col-4 lead font-weight-normal">Suceso:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path = "suceso" cssClass = "error" />                
               </div>
-              <form:input  class="col-6 input-group" path="suceso"/>
+              <form:input class="col-6 input-group" path="suceso" placeholder="Describe el suceso"/>
           </div>
           <br><br>
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Lugar:</label>
+               <form:label path="lugar" class="col-4 lead font-weight-normal">Lugar:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path = "lugar" cssClass = "error" />                
               </div>
-              <form:input class="col-6 input-group" path="lugar"/>
+              <form:input class="col-6 input-group" path="lugar" placeholder="Ingresa un lugar"/>
           </div>
           <br><br>
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Cliente id :</label>
+               <form:label path ="cliente_id" class="col-4 lead font-weight-normal">ID Cliente:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
+                <form:errors path ="cliente_id" cssClass = "error" />                
               </div>
-              <form:input class="col-6 input-group" path="cliente_id"/>
+              <form:input type="number" class="col-6 input-group" path="cliente_id" placeholder="Corresponde al ID de un cliente valido"/>
           </div>
           <br><br><br>
           
            <div class="row">
                <div class="container" style="max-width:55%">
-               <a class="btn btn-warning col-4" href="index.jsp" role="button">Volver</a>
+               <a class="btn btn-warning col-4" href="/ProyectoSpringJPA/main" role="button">Volver</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                <input type="submit" class="btn btn-warning col-4" value="Reportar Accidente">
                </div>

@@ -31,7 +31,7 @@
    	</bean>
    
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-        p:driverClassName="oracle.jdbc.driver.OracleDriver" p:url="jdbc:oracle:thin:@clase003.ddns.net:1700:xe"
+        p:driverClassName="oracle.jdbc.driver.OracleDriver" p:url="jdbc:oracle:thin:@localhost:1700:xe"
         p:username="UJPA" p:password="1234" />
 
     <bean id="hibernateJpaVendorAdapter"

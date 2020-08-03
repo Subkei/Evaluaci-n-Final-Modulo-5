@@ -29,21 +29,12 @@
      <form:errors path = "*" cssClass = "errorblock" element = "div" /> 
       <div class="container">
           <div class="row">
-              <form:label path="id chequeo" class="col-4 lead font-weight-normal">ID Chequeo:</form:label>
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><b>></b></span>
-                <form:errors path = "idchequeo" cssClass = "error" />
-              </div>
-              <form:input class="col-6 input-group" path="idchequeo" placeholder="Ingresa id de chequeo"/>
-          </div>
-          <br><br>
-          <div class="row">
-              <form:label path="detalle" class="col-4 lead font-weight-normal" >Detalle:</form:label>
+              <form:label path="detalle" class="col-4 lead font-weight-normal">Detalle:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "detalle" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="detalle" rows="5" cols="60" placeholder="Ingresa detalle del chequeo con un máximo de 500 caracteres"/>
+              <form:input class="col-6 input-group" path="detalle" placeholder="Ingresa detalle del chequeo con un máximo de 150 caracteres"/>
           </div>
           <br><br>              
           <div class="row">
@@ -51,21 +42,21 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input class="col-6 input-group" path="estado" rows="5" cols="60" placeholder="Ingresar detalle del estado del chequeo en terreno con un máximo hasta 500 caracteres"/>
+              <form:input class="col-6 input-group" path="estado" min="3" max="15" placeholder="Ingresar detalle del estado del chequeo en terreno con un máximo hasta 15 caracteres"/>
           </div>
           <br><br>
           <div class="row">
-              <form:label path="visita id" class="col-4 lead font-weight-normal">Visita ID:</form:label>
+              <form:label path="visitas_idvisita" class="col-4 lead font-weight-normal">ID Visita:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-                <form:errors path = "idvisita" cssClass = "error" />
+                <form:errors path="visitas_idvisita" cssClass="error" />
               </div>
-              <form:input class="col-6 input-group" path="idvisita" placeholder="Ingresar ID Visitas"/>
+              <form:input class="col-6 input-group" path="visitas_idvisita" placeholder="Ingresar ID Visitas"/>
           </div>
           <br><br><br>
            <div class="row">
                <div class="container" style="max-width:55%">
-               <a class="btn btn-warning col-4" href="/ProyectoSpringJPA/viewchequeo" role="button">Volver</a>
+               <a class="btn btn-warning col-4" href="/ProyectoSpringJPA/viewchec" role="button">Volver</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                <input type="submit" class="btn btn-warning col-4" value="Editar chequeo">
                </div>

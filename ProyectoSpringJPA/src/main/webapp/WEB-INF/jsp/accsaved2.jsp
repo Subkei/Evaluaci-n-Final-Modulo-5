@@ -1,61 +1,38 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>      
-
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS JS-->
-<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
-<spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
-
- <link href="${bootstrapCSS}" rel="stylesheet" />
-<script src="${jqueryJS}"></script>
-
-<title>Accidente Registrado </title>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>         
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Pago ok</title>
+    <!-- Bootstrap CSS-->
+    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+    
+    <link href="${bootstrapCSS}" rel="stylesheet" />
 </head>
 <body>
+<div class="pt-md-5 pb-md-4 mx-auto">
+    </div>
 
-   <div class="jumbotron">
-      <header class="text-center">
-          <h2>Detalle Accidente Registrado </h2>
-      </header>
-  </div> 
-  	<div class="container">
-      	<table >
-         <tr class ="row ">
-            <td> <label class="col-4">  Fecha:</label></td>
-            <td>${fecha}</td>
-         </tr>
-         <tr class ="row">
-            <td> <label class="col-4">  Hora:</label></td>
-            <td>${hora}</td>
-         </tr>
-         <tr class ="row">
-            <td> <label class="col-4">  Suceso:</label></td>
-            <td>${suceso}</td>
-         </tr >
-         <tr class ="row">
-            <td> <label class="col-4">  Lugar:</label></td>
-            <td>${lugar}</td>
-         </tr>
-         <tr class ="row">
-            <td> <label class="col-4">  ID Cliente:</label></td>
-            <td>${cliente_id}</td>
-         </tr>                  
-      </table>
-   </div>
-      <br>
-      <a class="btn btn-warning col-4" href="r_accform" role="button">Volver</a> 
-
-
-      <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />
-    <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJS" />
-    
-    <script src="${jqueryJS}"></script>
-    <script src="${bootstrapJS}"></script>
+    <div class="container">
+      <div class="card-deck mb-3">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">${mensaje}</h4>
+      </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+	            <li>Fecha: ${fecha}</li>
+	            <li>Hora: ${hora}</li>
+	            <li>Suceso: ${suceso}</li>
+	            <li>Lugar: ${Suceso}</li>
+	            <li>Lugar: ${cliente_id}</li>
+            </ul>
+            <a type="button" class="btn btn-lg btn-primary" href="/ProyectoSpringJPA/main">Volver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      
 </body>
 </html>

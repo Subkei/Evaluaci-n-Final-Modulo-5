@@ -29,21 +29,21 @@
      <form:errors path = "*" cssClass = "errorblock" element="div" />
       <div class="container">
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Nombre:</label>
+               <form:label path="nombre" class="col-4 lead font-weight-normal">Nombre:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "nombre" cssClass = "error" />
+              	<form:errors path="nombre" cssClass = "error"/>
               </div>
-              <form:input class="col-6 input-group" path="nombre"/>
+              <form:input class="col-6 input-group" path="nombre" placeholder="Ingresar el nombre completo"/>
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Especialidad:</label>
+               <form:label path="especialidad" class="col-4 lead font-weight-normal">Especialidad:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "especialidad" cssClass = "error" />
+              	<form:errors path = "especialidad" cssClass="error"/>
               </div>
-              <form:input class="col-6 input-group" path="especialidad"/>
+              <form:input class="col-6 input-group" path="especialidad" placeholder="Ingresar la especialidad"/>
           </div>
           <br><br>
           

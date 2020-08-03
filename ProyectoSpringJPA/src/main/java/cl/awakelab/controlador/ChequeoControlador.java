@@ -45,18 +45,18 @@ public class ChequeoControlador {
     		m.addAttribute("mensaje", mensaje);
     		m.addAttribute("detalle", chequeo.getDetalle());
     		m.addAttribute("estado", chequeo.getEstado());
-    		m.addAttribute("idvisita", chequeo.getIdvisita());
+    		m.addAttribute("visitas_idvisita", chequeo.getVisitas_idvisita());
     	}
         log.info("Chequeo creado: " + chequeo.toString());
         return "checsaved";
     }
     //mostrar listado chequeo
-    @GetMapping(value="/viewchec")//(..., headers = "Accept=application/json")    
+    @GetMapping(value="/viewchec")
     public String getChequeoList(Model m){    
         List<Chequeo> listchec= servicioChec.getAllChequeos();
         m.addAttribute("listachequeo",listchec);
         log.info("Listado de chequeo");
-        return "viewchequeo";
+        return "viewchec";
     }
     //busqueda por ID de chequeo (detalle)
     @GetMapping(value="/chequeo/{idchequeo}")
@@ -87,7 +87,7 @@ public class ChequeoControlador {
     	   m.addAttribute("mensaje", mensaje);
     	   m.addAttribute("detalle", chequeo.getDetalle());
     	   m.addAttribute("estado", chequeo.getEstado());
-    	   m.addAttribute("idvisita", chequeo.getIdvisita());    	   
+    	   m.addAttribute("visitas_idvisita", chequeo.getVisitas_idvisita());    	   
        }
     	log.info("Procesando edición de chequeo");
         return "checsaved";

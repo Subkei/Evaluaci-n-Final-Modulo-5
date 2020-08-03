@@ -11,6 +11,5 @@ public interface IChequeoServicio {
 	 void addChequeo(Chequeo chequeo);
 	 void updateChequeo(Chequeo chequeo);
 	 void deleteChequeo(int idchequeo);
-	 //List<Chequeo> getChequeoByNombre(String chequeoNombre);
 
 }

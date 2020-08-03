@@ -30,29 +30,29 @@
       
       
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Detalle :</label>
+              <label class="col-4 lead font-weight-normal">Detalle :</label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "detalle" cssClass = "error" />
               </div>
-              <form:input  class="col-6 input-group" path="detalle"/>
+              <form:input class="col-6 input-group" path="detalle"/>
           </div>
           <br><br>
           
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Gestión:</label>
+              <label class="col-4 lead font-weight-normal">Gestión:</label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "gestion" cssClass = "error" />
               </div>
-              <form:input  class="col-6 input-group" path="gestion"/>
+              <form:input class="col-6 input-group" path="gestion"/>
           </div>
           <br><br>
           
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Propuestas:</label>
+              <label class="col-4 lead font-weight-normal">Propuestas:</label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
@@ -68,14 +68,14 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "fecha" cssClass = "error" />
               </div>
-              <form:input  class="col-6 input-group" path="fecha"/>
+              <form:input type="date" class="col-6 input-group" path="fecha"/>
           </div>
           <br><br>
           
           
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Especial:</label>
+              <label class="col-4 lead font-weight-normal">Especial:</label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
@@ -85,12 +85,12 @@
     
     
     	<div class="row">
-              <label class="col-4 lead font-weight-normal">  Visita Id: </label>
+              <label class="col-4 lead font-weight-normal">ID Visita: </label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "visitas_idvisita" cssClass = "error" />
               </div>
-              <form:input  class="col-6 input-group" path="visitas_idvisita"/>
+              <form:input class="col-6 input-group" path="visitas_idvisita"/>
           </div>
           
           <br><br><br>

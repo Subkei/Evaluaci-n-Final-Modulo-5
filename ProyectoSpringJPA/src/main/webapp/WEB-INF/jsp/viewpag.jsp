@@ -27,7 +27,6 @@
 <body style="padding: 10px;">
 
 	<h1 class="display-4">Listar Pagos de Clientes</h1>
-
 <table id="tabla" class="table table-striped table-bordered" style="width: 100%; ">
 	<thead>		
 	<tr>

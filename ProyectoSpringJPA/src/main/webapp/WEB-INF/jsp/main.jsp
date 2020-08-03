@@ -68,8 +68,8 @@
 	<a href="viewacc" class="list-group-item list-group-item-action list-group-item-light">Gestionar Accidentes</a>
 	<a href="viewase" class="list-group-item text-white list-group-item-action list-group-item-dark">Gestionar Asesorias</a>
 	<a href="viewmej" class="list-group-item list-group-item-action list-group-item-light">Gestionar Actividades de Mejoras</a>
-	<a href="viewvisita" class="list-group-item text-white list-group-item-action list-group-item-dark">Gestionar Visitas</a>
-	<a href="viewchequeo" class="list-group-item list-group-item-action list-group-item-light">Gestionar Chequeos</a>
+	<a href="viewvis" class="list-group-item text-white list-group-item-action list-group-item-dark">Gestionar Visitas</a>
+	<a href="viewchec" class="list-group-item list-group-item-action list-group-item-light">Gestionar Chequeos</a>
 	</div>
 </div>
 </sec:authorize>

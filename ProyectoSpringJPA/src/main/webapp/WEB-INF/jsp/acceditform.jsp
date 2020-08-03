@@ -29,60 +29,55 @@
      <form:errors path = "*" cssClass = "errorblock" element="div" />
       <div class="container">
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Fecha :</label>
+              <form:label path="fecha" class="col-4 lead font-weight-normal">Fecha:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "fecha" cssClass = "error" />
+              	<form:errors path="fecha" cssClass="error" />
               </div>
-              <form:input  class="col-6 input-group" path="fecha"/>
+              <form:input type="date" class="col-6 input-group" path="fecha"/>
           </div>
           <br><br>
           
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Hora:</label>
+              <form:label path="hora" class="col-4 lead font-weight-normal">Hora:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "hora" cssClass = "error" />
+              	<form:errors path="hora" cssClass="error" />
               </div>
-              <form:input  class="col-6 input-group" path="hora"/>
+              <form:input type="time" class="col-6 input-group" path="hora"/>
           </div>
           <br><br>
           
           
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Suceso:</label>
+              <form:label path="suceso" class="col-4 lead font-weight-normal">Suceso:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "suceso" cssClass = "error" />
+              	<form:errors path="suceso" cssClass="error" />
               </div>
               <form:input  class="col-6 input-group" path="suceso"/>
           </div>
           <br><br>
-          
-          
-          
+
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Lugar:</label>
+              <form:label path="lugar" class="col-4 lead font-weight-normal">Lugar:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "lugar" cssClass = "error" />
               </div>
-              <form:input  class="col-6 input-group" path="lugar"/>
+              <form:input class="col-6 input-group" path="lugar"/>
           </div>
           <br><br>
           
-          
-          
           <div class="row">
-              <label class="col-4 lead font-weight-normal">  Cliente id:</label>
+              <form:label path="cliente_id" class="col-4 lead font-weight-normal"> ID Cliente:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               	<form:errors path = "cliente_id" cssClass = "error" />
               </div>
-              <form:input  class="col-6 input-group" path="cliente_id"/>
+              <form:input class="col-6 input-group" path="cliente_id"/>
           </div>
- 
           <br><br><br>
           
           <div class="row">
@@ -97,7 +92,6 @@
       </form:form> 
       <div class="container" style="height: 50px;"></div>
     
-   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <spring:url value="/resources/js/jquery-3.5.1.min.js" var="jqueryJS" />

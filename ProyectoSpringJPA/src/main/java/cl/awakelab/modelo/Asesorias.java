@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "Asesoria")
+@Table(name = "Asesorias")
 public class Asesorias {
 	
 		@Id

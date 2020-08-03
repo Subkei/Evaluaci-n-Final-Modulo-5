@@ -31,10 +31,11 @@
               <form:label path="direccion" class="col-4 lead font-weight-normal">Direccion:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-                <form:errors path = "direccion" cssClass = "error" />
+                <form:errors path="direccion" cssClass="error"/>
               </div>
               <form:input class="col-6 input-group" path="direccion" placeholder="Ingresa direccion"/>
           </div>
+          <br><br>          
              <div class="row">
               <form:label path="ciudad" class="col-4 lead font-weight-normal">Ciudad:</form:label>
               <div class="input-group-prepend">
@@ -59,7 +60,7 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "resumen" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="resumen" placeholder=""/>
+              <form:input class="col-6 input-group" path="resumen" placeholder="Detalle un resumen"/>
           </div>
           <br><br>
           <div class="row">
@@ -67,7 +68,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
               </div>
-              <form:input class="col-6 input-group" path="observaciones" placeholder=""/>
+              <form:input class="col-6 input-group" path="observaciones" placeholder="Describa observaciones"/>
           </div>
           <br><br>
           <div class="row">
@@ -76,8 +77,9 @@
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
                 <form:errors path = "cliente_id" cssClass = "error" />
               </div>
-              <form:input class="col-6 input-group" path="cliente_id" placeholder="Ingrese Cliente ID"/>
+              <form:input class="col-6 input-group" path="cliente_id" placeholder="Ingrese ID de Cliente"/>
           </div>
+          <br><br>          
           <div class="row">
               <form:label path="empleado_idempleado" class="col-4 lead font-weight-normal">Empleado Id:</form:label>
               <div class="input-group-prepend">
@@ -85,7 +87,6 @@
                 <form:errors path = "empleado_idempleado" cssClass = "error" />
               </div>
               <form:input class="col-6 input-group" path="empleado_idempleado" placeholder="Ingrese Empleado ID"/>
-          </div>
           </div>
           <br><br><br>
            <div class="row">
@@ -95,7 +96,8 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="submit" class="btn btn-warning col-4" value="Editar Visitas"/>
                </div>
-           </div>     
+           </div>
+          </div>     
       </form:form> 
       <div class="container" style="height: 50px;"></div>
     

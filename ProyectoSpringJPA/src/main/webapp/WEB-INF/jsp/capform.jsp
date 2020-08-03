@@ -29,37 +29,37 @@
      <form:errors path="*" cssClass="errorBlock" element="div" />
       <div class="container">
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Fecha:</label>
+               <form:label path="fecha" class="col-4 lead font-weight-normal">Fecha:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-                <form:errors path = "fecha" cssClass = "error" />
+                <form:errors path="fecha" cssClass="error" />
               </div>
-              <form:input class="col-6 input-group" path="fecha"/>
+              <form:input type="date" class="col-6 input-group" path="fecha"/>
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">hora:</label>
+               <form:label path="hora" class="col-4 lead font-weight-normal">hora:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "hora" cssClass = "error" />
+              	<form:errors path="hora" cssClass="error" />
               </div>
-              <form:input class="col-6 input-group" path="hora"/>
+              <form:input type="time" class="col-6 input-group" path="hora"/>
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">numasistentes:</label>
+               <form:label path="numasistentes" class="col-4 lead font-weight-normal">numasistentes:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "numasistentes" cssClass = "error" />
+              	<form:errors path="numasistentes" cssClass="error" />
               </div>
-              <form:input class="col-6 input-group" path="numasistentes"/>
+              <form:input type="number" class="col-6 input-group" path="numasistentes"/>
           </div>
           <br><br>
           <div class="row">
-              <label class="col-4 lead font-weight-normal">Visitas Id:</label>
+               <form:label path="visitas_idvisita" class="col-4 lead font-weight-normal">Visitas Id:</form:label>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><b>></b></span>
-              	<form:errors path = "visitas_idvisita" cssClass = "error" />
+              	<form:errors path="visitas_idvisita" cssClass="error" />
               </div>
               <form:input class="col-6 input-group" path="visitas_idvisita"/>
           </div>

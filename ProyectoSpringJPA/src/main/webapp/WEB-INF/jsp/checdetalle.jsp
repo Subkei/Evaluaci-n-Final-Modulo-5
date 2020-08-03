@@ -1,20 +1,37 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>      
+<!doctype html>
 <html>
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>Detalle Chequeo</title>
-	</head>
-	<body>
-	
-		<h1>Detalle Chequeo</h1>
-		
-		ID Chequeo: ${checData.getIdchequeo()}<br/>
-		Detalle: ${checData.getDetalle()}<br/>
-		Estado: ${checData.getEstado()}<br/>
-		ID Visita: ${checData.getIdVisita()}<br/>
-		<br />
-		<a  class="btn btn-warning col-4" href="/ProyectoSpringJPA/viewchec" role="button">Volver</a>
-	
-	</body>
+<head>
+<meta charset="ISO-8859-1">
+<title>Detalle Chequeo</title>
+    <!-- Bootstrap CSS JS-->
+    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+    
+    <link href="${bootstrapCSS}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="pt-md-5 pb-md-4 mx-auto">
+    </div>
+
+    <div class="container">
+      <div class="card-deck mb-3">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Detalle Chequeo</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>ID Chequeo: ${checData.getIdchequeo()}</li>
+              <li>Detalle: ${checData.getDetalle()}</li>
+              <li>Estado: ${checData.getEstado()}</li>
+              <li>ID Visita: ${checData.getVisitas_idvisita()}</li>
+            </ul>
+            <a type="button" class="btn btn-lg btn-primary" href="/ProyectoSpringJPA/viewchec">Volver al Listado</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</body>
 </html>

@@ -23,20 +23,20 @@ public class Chequeo {
 	@NotEmpty
 	private String detalle;
 	@NotEmpty
-	private int estado;
+	private String estado;
 	
-	private String idvisita;
+	private int visitas_idvisita;
 	
 	public Chequeo() {
 		super();
 	}
 
-	public Chequeo(int idchequeo,String detalle, int estado, String idvisita) {
+	public Chequeo(int idchequeo,String detalle, String estado, int visitas_idvisita) {
 		super();
 		this.idchequeo = idchequeo;
 		this.detalle = detalle;
 		this.estado = estado;
-		this.idvisita = idvisita;	
+		this.visitas_idvisita = visitas_idvisita;	
 
 	}
 
@@ -56,26 +56,26 @@ public class Chequeo {
 		this.detalle = detalle;
 	}
 
-	public int getEstado() {
+	public String getEstado() {
 		return estado;
 	}
 
-	public void setEstado(int estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-	public String getIdvisita() {
-		return idvisita;
+	public int getVisitas_idvisita() {
+		return visitas_idvisita;
 	}
 
-	public void setIdvisita(String idvisita) {
-		this.idvisita = idvisita;
+	public void setVisitas_idvisita(int visitas_idvisita) {
+		this.visitas_idvisita = visitas_idvisita;
 	}
 
 	@Override
 	public String toString() {
-		return "Chequeo [idchequeo=" + idchequeo + ", detalle=" + detalle + ", estado=" + estado + ", idvisita="
-				+ idvisita + "]";
+		return "Chequeo [idchequeo=" + idchequeo + ", detalle=" + detalle + ", estado=" + estado + ", visitas_idvisita="
+				+ visitas_idvisita + "]";
 	}
 	
 	
